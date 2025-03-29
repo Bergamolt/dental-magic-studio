@@ -3,10 +3,13 @@ const ENDPOINT = "https://dental-magic-studio.bergamolt22.workers.dev/";
 function sendContact() {
 	const valid = validateContact();
 	if(valid) {
-		jQuery.ajax({
-		url: ENDPOINT,
-		data:'userName='+$("#userName").val()+'&userTel='+$("#userTel").val()+'&subject='+$("#category").val(),
-		type: "POST",
+		jQuery.fetch(ENDPOINT, {
+		method: "POST",
+		body: JSON.stringify({
+			userName: $("#userName").val(),
+			userTel: $("#userTel").val(),
+			subject: $("#category").val()
+		}),
 		success:function(data){
 		$("#mail-status").html(data);
 		},
@@ -37,10 +40,13 @@ function validateContact() {
 function sendAppointment() {
 	const valid = validateAppointment();
 	if(valid) {
-		jQuery.ajax({
-		url: ENDPOINT,
-		data:'userName='+$("#userNameA").val()+'&userTel='+$("#userTelA").val()+'&subject=Запись на прием',
-		type: "POST",
+		jQuery.fetch(ENDPOINT, {
+		method: "POST",
+		body: JSON.stringify({
+			userName: $("#userNameA").val(),
+			userTel: $("#userTelA").val(),
+			subject: "Запись на прием"
+		}),
 		success:function(data){
 		$("#mail-statusA").html(data);
 		},
