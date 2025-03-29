@@ -1,19 +1,31 @@
 const ENDPOINT = "https://dental-magic-studio.bergamolt22.workers.dev/";
 
+// print "<p class='success'>Ваши данные отправлены.</p>";
+// } else {
+// print "<p class='Error'>Попробуйте еще раз.</p>";
+
 function sendContact() {
 	const valid = validateContact();
+
 	if(valid) {
-		jQuery.fetch(ENDPOINT, {
-		method: "POST",
-		body: JSON.stringify({
-			userName: $("#userName").val(),
-			userTel: $("#userTel").val(),
-			subject: $("#category").val()
-		}),
-		success:function(data){
-		$("#mail-status").html(data);
-		},
-		error:function (){}
+		fetch(ENDPOINT, {
+			method: "POST",
+			body: JSON.stringify({
+				userName: $("#userName").val(),
+				userTel: $("#userTel").val(), 
+				subject: $("#category").val()
+			})
+		})
+		.then(response => response.json())
+		.then(data => {
+			$("#mail-status").html(`<p class='success'>${data.message}</p>`);
+		})
+		.catch(error => {
+			if (error.statusMessage) {
+				$("#mail-status").html(`<p class='error'>${error.statusMessage}</p>`);
+			} else {
+				console.error('Error:', error);
+			}
 		});
 	}
 }
@@ -40,17 +52,24 @@ function validateContact() {
 function sendAppointment() {
 	const valid = validateAppointment();
 	if(valid) {
-		jQuery.fetch(ENDPOINT, {
+		fetch(ENDPOINT, {
 		method: "POST",
 		body: JSON.stringify({
 			userName: $("#userNameA").val(),
 			userTel: $("#userTelA").val(),
 			subject: "Запись на прием"
-		}),
-		success:function(data){
-		$("#mail-statusA").html(data);
-		},
-		error:function (){}
+		})
+		})
+		.then(response => response.json())
+		.then(data => {
+			$("#mail-statusA").html(`<p class='success'>${data.message}</p>`);
+		})
+		.catch(error => {
+			if (error.statusMessage) {
+				$("#mail-statusA").html(`<p class='error'>${error.statusMessage}</p>`);
+			} else {
+				console.error('Error:', error);
+			}
 		});
 	}
 }
