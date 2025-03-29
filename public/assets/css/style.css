@@ -162,25 +162,6 @@ h6 {
     text-decoration: none;
 }
 
-#header .logo-img {
-    width: 204px;
-    height: 40px;
-}
-
-#header .logo-img-dark {
-    width: 204px;
-    height: 40px;
-    display: none;
-}
-
-#header.header-scrolled .logo-img-dark {
-    display: block;
-}
-
-#header.header-scrolled .logo-img {
-    display: none;
-}
-
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
