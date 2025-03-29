@@ -1,9 +1,10 @@
+const ENDPOINT = "https://dental-magic-studio.bergamolt22.workers.dev/";
+
 function sendContact() {
-	var valid;	
-	valid = validateContact();
+	const valid = validateContact();
 	if(valid) {
 		jQuery.ajax({
-		url: "forms/contact.php",
+		url: ENDPOINT,
 		data:'userName='+$("#userName").val()+'&userTel='+$("#userTel").val()+'&subject='+$("#category").val(),
 		type: "POST",
 		success:function(data){
@@ -15,7 +16,7 @@ function sendContact() {
 }
 
 function validateContact() {
-	var valid = true;	
+	let valid = true;	
 	$(".demoInputBox").css('background-color','');
 	$(".info").html('');
 	
@@ -34,11 +35,10 @@ function validateContact() {
 }
 
 function sendAppointment() {
-	var valid;	
-	valid = validateAppointment();
+	const valid = validateAppointment();
 	if(valid) {
 		jQuery.ajax({
-		url: "forms/contact.php",
+		url: ENDPOINT,
 		data:'userName='+$("#userNameA").val()+'&userTel='+$("#userTelA").val()+'&subject=Запись на прием',
 		type: "POST",
 		success:function(data){
@@ -50,7 +50,7 @@ function sendAppointment() {
 }
 
 function validateAppointment() {
-	var valid = true;	
+	let valid = true;	
 	$(".demoInputBox").css('background-color','');
 	$(".info").html('');
 	
