@@ -1,4 +1,4 @@
-const ENDPOINT = "https://form.dental-magic-studio.com";
+const ENDPOINT = "https://form.dentalmagicstudio.com";
 
 function sendContact() {
   const valid = validateContact();
