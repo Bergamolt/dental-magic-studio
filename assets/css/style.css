@@ -163,11 +163,16 @@ h6 {
 }
 
 #header .logo {
-    padding: 0;
+    /* padding: 0;
     margin: 0;
     width: 251px;
     height: 60px;
-    background: url('../img/logo.png') center center / contain no-repeat;
+    background: url('../img/logo.png') center center / contain no-repeat; */
+}
+
+#header .logo-img {
+    width: 204px;
+    height: 40px;
 }
 
 #header.header-scrolled .logo {
@@ -453,11 +458,19 @@ h6 {
 
 #hero .hero-bg {
     height: 50vw;
-    background: url('../img/photo-bg.jpg') right top / cover no-repeat;
+    background: url('../img/hero-right.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center 40%;
     position: relative;
+
+    @media (max-width: 768px) {
+        background-size: cover;
+        background-position: center -1rem;
+    }
 }
 
-#hero .hero-bg:before {
+/* #hero .hero-bg:before {
     content: '';
     background: rgb(0, 0, 0);
     background: -moz-linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 80%);
@@ -470,7 +483,7 @@ h6 {
     bottom: 0;
     left: 0;
     z-index: 2;
-}
+} */
 
 #hero h1 {
     margin: 0 0 10px 0;
