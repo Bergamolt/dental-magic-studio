@@ -6,9 +6,6 @@ function sendContact() {
   if (valid) {
     fetch(ENDPOINT, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/form-data",
-      },
       body: JSON.stringify({
         userName: $("#userName").val(),
         userTel: $("#userTel").val(),
@@ -53,9 +50,6 @@ function sendAppointment() {
   if (valid) {
     fetch(ENDPOINT, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/form-data",
-      },
       body: JSON.stringify({
         userName: $("#userNameA").val(),
         userTel: $("#userTelA").val(),
