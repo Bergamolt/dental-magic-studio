@@ -162,23 +162,9 @@ h6 {
     text-decoration: none;
 }
 
-#header .logo {
-    /* padding: 0;
-    margin: 0;
-    width: 251px;
-    height: 60px;
-    background: url('../img/logo.png') center center / contain no-repeat; */
-}
-
 #header .logo-img {
     width: 204px;
     height: 40px;
-}
-
-#header.header-scrolled .logo {
-    width: 204px;
-    height: 40px;
-    background: url('../img/logo-dark.png') center center / contain no-repeat;
 }
 
 /*--------------------------------------------------------------
