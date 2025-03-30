@@ -1,0 +1,510 @@
+---
+import { instagram } from "@/components/SocialLinks.astro";
+import PortfolioCard from "@/components/PortfolioCard.astro";
+
+const vinirImages = [
+  "/assets/img/portfolio/viniry-1.jpg",
+  "/assets/img/portfolio/viniry-2.jpg",
+  "/assets/img/portfolio/viniry-3.jpg",
+  "/assets/img/portfolio/viniry-4.jpg",
+  "/assets/img/portfolio/viniry-5.jpg",
+  "/assets/img/portfolio/viniry-6.jpg",
+  "/assets/img/portfolio/viniry-7.jpg",
+  "/assets/img/portfolio/viniry-8.jpg",
+  "/assets/img/portfolio/viniry-9.jpg",
+  "/assets/img/portfolio/viniry-10.jpg",
+  "/assets/img/portfolio/viniry-11.jpg",
+  "/assets/img/portfolio/viniry-12.jpg",
+];
+---
+
+<!-- ======= Portfolio Section ======= -->
+<section id="portfolio" class="portfolio section-bg">
+  <div class="container">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Наші роботи</h2>
+    </div>
+
+    <div class="row" data-aos="fade-up" data-aos-delay="200">
+      <div class="col-lg-12 d-flex justify-content-center">
+        <ul id="portfolio-flters">
+          <li data-filter="*" class="filter-active">Все</li>
+          <li data-filter=".filter-vinir">Вініри</li>
+          <li data-filter=".filter-brackets">Брекети</li>
+          <li data-filter=".filter-koronki">Коронки</li>
+          <li data-filter=".filter-rest">Художня реставрація</li>
+          <li data-filter=".filter-hygiene">Професійна гігієна</li>
+          <li data-filter=".filter-karies">Лікування карієсу</li>
+          <li data-filter=".filter-implant">Імплантація</li>
+          <li data-filter=".filter-protez">Протезування</li>
+          <li data-filter=".filter-white">Відбілювання</li>
+        </ul>
+      </div>
+    </div>
+
+    <div
+      class="row portfolio-container"
+      data-aos="fade-up"
+      data-aos-delay="400"
+    >
+      {
+        vinirImages.map((image) => (
+          <PortfolioCard
+            title="Винири"
+            category="Керамические виниры"
+            imageSrc={image}
+            filterClass="vinir"
+          />
+        ))
+      }
+      <div class="col-lg-4 col-md-6 portfolio-item filter-brackets">
+        <a
+          href="/assets/img/portfolio/brackets-1.jpg"
+          data-gallery="portfolioGallery"
+          class="portfolio-lightbox"
+          title="Брекети"
+        >
+          <div class="portfolio-wrap">
+            <img
+              lazyload
+              src="/assets/img/portfolio/brackets-1.jpg"
+              class="img-fluid"
+              alt=""
+            />
+            <div class="portfolio-info">
+              <h4>Вініри</h4>
+
+              <div class="portfolio-links">
+                <i class="bx bx-plus"></i>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-4 col-md-6 portfolio-item filter-brackets">
+        <a
+          href="/assets/img/portfolio/brackets-2.jpg"
+          data-gallery="portfolioGallery"
+          class="portfolio-lightbox"
+          title="Брекети"
+        >
+          <div class="portfolio-wrap">
+            <img
+              lazyload
+              src="/assets/img/portfolio/brackets-2.jpg"
+              class="img-fluid"
+              alt=""
+            />
+            <div class="portfolio-info">
+              <h4>Вініри</h4>
+
+              <div class="portfolio-links">
+                <i class="bx bx-plus"></i>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-rest">
+        <a
+          href="/assets/img/portfolio/rest-1.jpg"
+          data-gallery="portfolioGallery"
+          class="portfolio-lightbox"
+          title="ХХудожня реставрація"
+        >
+          <div class="portfolio-wrap">
+            <img
+              lazyload
+              src="/assets/img/portfolio/rest-1.jpg"
+              class="img-fluid"
+              alt=""
+            />
+            <div class="portfolio-info">
+              <h4>Реставрація</h4>
+
+              <div class="portfolio-links">
+                <i class="bx bx-plus"></i>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-rest">
+        <a
+          href="/assets/img/portfolio/rest-2.jpg"
+          data-gallery="portfolioGallery"
+          class="portfolio-lightbox"
+          title="ХХудожня реставрація"
+        >
+          <div class="portfolio-wrap">
+            <img
+              lazyload
+              src="/assets/img/portfolio/rest-2.jpg"
+              class="img-fluid"
+              alt=""
+            />
+            <div class="portfolio-info">
+              <h4>Реставрація</h4>
+
+              <div class="portfolio-links">
+                <i class="bx bx-plus"></i>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-4 col-md-6 portfolio-item filter-rest">
+        <a
+          href="/assets/img/portfolio/rest-3.jpg"
+          data-gallery="portfolioGallery"
+          class="portfolio-lightbox"
+          title="Художня реставрація"
+        >
+          <div class="portfolio-wrap">
+            <img
+              lazyload
+              src="/assets/img/portfolio/rest-3.jpg"
+              class="img-fluid"
+              alt=""
+            />
+            <div class="portfolio-info">
+              <h4>Реставрація</h4>
+
+              <div class="portfolio-links">
+                <i class="bx bx-plus"></i>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-4 col-md-6 portfolio-item filter-rest">
+        <a
+          href="/assets/img/portfolio/rest-4.jpg"
+          data-gallery="portfolioGallery"
+          class="portfolio-lightbox"
+          title="Художня реставрація"
+        >
+          <div class="portfolio-wrap">
+            <img
+              lazyload
+              src="/assets/img/portfolio/rest-4.jpg"
+              class="img-fluid"
+              alt=""
+            />
+            <div class="portfolio-info">
+              <h4>Реставрація</h4>
+
+              <div class="portfolio-links">
+                <i class="bx bx-plus"></i>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-4 col-md-6 portfolio-item filter-koronki">
+        <a
+          href="/assets/img/portfolio/koronki-1.jpg"
+          data-gallery="portfolioGallery"
+          class="portfolio-lightbox"
+          title="Художня реставрація"
+        >
+          <div class="portfolio-wrap">
+            <img
+              lazyload
+              src="/assets/img/portfolio/koronki-1.jpg"
+              class="img-fluid"
+              alt=""
+            />
+            <div class="portfolio-info">
+              <h4>Коронки</h4>
+
+              <div class="portfolio-links">
+                <i class="bx bx-plus"></i>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-4 col-md-6 portfolio-item filter-koronki">
+        <a
+          href="/assets/img/portfolio/koronki-2.jpg"
+          data-gallery="portfolioGallery"
+          class="portfolio-lightbox"
+          title="Художня реставрація"
+        >
+          <div class="portfolio-wrap">
+            <img
+              lazyload
+              src="/assets/img/portfolio/koronki-2.jpg"
+              class="img-fluid"
+              alt=""
+            />
+            <div class="portfolio-info">
+              <h4>Коронки</h4>
+
+              <div class="portfolio-links">
+                <i class="bx bx-plus"></i>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-karies">
+        <a
+          href="/assets/img/portfolio/karies-2.jpg"
+          data-gallery="portfolioGallery"
+          class="portfolio-lightbox"
+          title="Лікування карієсу"
+        >
+          <div class="portfolio-wrap">
+            <img
+              lazyload
+              src="/assets/img/portfolio/karies-2.jpg"
+              class="img-fluid"
+              alt=""
+            />
+            <div class="portfolio-info">
+              <h4>Лікуаання карієсу</h4>
+
+              <div class="portfolio-links">
+                <i class="bx bx-plus"></i>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-karies">
+        <a
+          href="/assets/img/portfolio/karies-3.jpg"
+          data-gallery="portfolioGallery"
+          class="portfolio-lightbox"
+          title="Лікування карієсу"
+        >
+          <div class="portfolio-wrap">
+            <img
+              lazyload
+              src="/assets/img/portfolio/karies-3.jpg"
+              class="img-fluid"
+              alt=""
+            />
+            <div class="portfolio-info">
+              <h4>Лікування карієсу</h4>
+
+              <div class="portfolio-links">
+                <i class="bx bx-plus"></i>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-karies">
+        <a
+          href="/assets/img/portfolio/karies-4.jpg"
+          data-gallery="portfolioGallery"
+          class="portfolio-lightbox"
+          title="Лікування карієсу"
+        >
+          <div class="portfolio-wrap">
+            <img
+              lazyload
+              src="/assets/img/portfolio/karies-4.jpg"
+              class="img-fluid"
+              alt=""
+            />
+            <div class="portfolio-info">
+              <h4>Лікування карієсу</h4>
+
+              <div class="portfolio-links">
+                <i class="bx bx-plus"></i>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-implant">
+        <a
+          href="/assets/img/portfolio/implant-1.jpg"
+          data-gallery="portfolioGallery"
+          class="portfolio-lightbox"
+          title="Імплантація зубів"
+        >
+          <div class="portfolio-wrap">
+            <img
+              lazyload
+              src="/assets/img/portfolio/implant-1.jpg"
+              class="img-fluid"
+              alt=""
+            />
+            <div class="portfolio-info">
+              <h4>Імплантація</h4>
+
+              <div class="portfolio-links">
+                <i class="bx bx-plus"></i>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-implant">
+        <a
+          href="/assets/img/portfolio/implant-3.jpg"
+          data-gallery="portfolioGallery"
+          class="portfolio-lightbox"
+          title="Імплантація зубів"
+        >
+          <div class="portfolio-wrap">
+            <img
+              lazyload
+              src="/assets/img/portfolio/implant-3.jpg"
+              class="img-fluid"
+              alt=""
+            />
+            <div class="portfolio-info">
+              <h4>Імплантація</h4>
+
+              <div class="portfolio-links">
+                <i class="bx bx-plus"></i>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-implant">
+        <a
+          href="/assets/img/portfolio/implant-2.jpg"
+          data-gallery="portfolioGallery"
+          class="portfolio-lightbox"
+          title="Імплантація зубів"
+        >
+          <div class="portfolio-wrap">
+            <img
+              lazyload
+              src="/assets/img/portfolio/implant-2.jpg"
+              class="img-fluid"
+              alt=""
+            />
+            <div class="portfolio-info">
+              <h4>Імплантація</h4>
+
+              <div class="portfolio-links">
+                <i class="bx bx-plus"></i>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <div class="col-lg-4 col-md-6 portfolio-item filter-protez">
+        <a
+          href="/assets/img/portfolio/protez-1.jpg"
+          data-gallery="portfolioGallery"
+          class="portfolio-lightbox"
+          title="Імплантація зубів"
+        >
+          <div class="portfolio-wrap">
+            <img
+              lazyload
+              src="/assets/img/portfolio/protez-1.jpg"
+              class="img-fluid"
+              alt=""
+            />
+            <div class="portfolio-info">
+              <h4>Протезування</h4>
+
+              <div class="portfolio-links">
+                <i class="bx bx-plus"></i>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-white">
+        <a
+          href="/assets/img/portfolio/white-1.jpg"
+          data-gallery="portfolioGallery"
+          class="portfolio-lightbox"
+          title="Відбілювання зубів"
+        >
+          <div class="portfolio-wrap">
+            <img
+              lazyload
+              src="/assets/img/portfolio/white-1.jpg"
+              class="img-fluid"
+              alt=""
+            />
+            <div class="portfolio-info">
+              <h4>Відбілювання</h4>
+
+              <div class="portfolio-links">
+                <i class="bx bx-plus"></i>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-hygiene">
+        <a
+          href="/assets/img/portfolio/hygiene-1.jpg"
+          data-gallery="portfolioGallery"
+          class="portfolio-lightbox"
+          title="Професійна гігієна"
+        >
+          <div class="portfolio-wrap">
+            <img
+              lazyload
+              src="/assets/img/portfolio/hygiene-1.jpg"
+              class="img-fluid"
+              alt=""
+            />
+            <div class="portfolio-info">
+              <h4>Професійна гігієна</h4>
+
+              <div class="portfolio-links">
+                <i class="bx bx-plus"></i>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-hygiene">
+        <a
+          href="/assets/img/portfolio/hygiene-2.jpg"
+          data-gallery="portfolioGallery"
+          class="portfolio-lightbox"
+          title="Професійна гігієна"
+        >
+          <div class="portfolio-wrap">
+            <img
+              lazyload
+              src="/assets/img/portfolio/hygiene-2.jpg"
+              class="img-fluid"
+              alt=""
+            />
+            <div class="portfolio-info">
+              <h4>Професійна гігієна</h4>
+
+              <div class="portfolio-links">
+                <i class="bx bx-plus"></i>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="row text-center" data-aos="fade-up" data-aos-delay="300">
+      <a href={instagram} target="_blank" class="works"
+        ><i class="bi bi-instagram"></i> Більше робот у Instagram</a
+      >
+    </div>
+  </div>
+</section><!-- End Portfolio Section -->

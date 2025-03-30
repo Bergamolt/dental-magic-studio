@@ -1,0 +1,30 @@
+---
+type Props = {
+  title: string;
+  category: string;
+  imageSrc: string;
+  filterClass: string;
+};
+
+const { title, category, imageSrc, filterClass } = Astro.props;
+---
+
+<div class={`col-lg-4 col-md-6 portfolio-item filter-${filterClass}`}>
+  <a
+    href={imageSrc}
+    data-gallery="portfolioGallery"
+    class="portfolio-lightbox"
+    title={title}
+  >
+    <div class="portfolio-wrap">
+      <img lazyoad src={imageSrc} class="img-fluid" alt="" />
+      <div class="portfolio-info">
+        <h4>{category}</h4>
+
+        <div class="portfolio-links">
+          <i class="bx bx-plus"></i>
+        </div>
+      </div>
+    </div>
+  </a>
+</div>
