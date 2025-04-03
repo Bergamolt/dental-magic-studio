@@ -4,6 +4,9 @@ function sendContact() {
   const valid = validateContact();
 
   if (valid) {
+    // Disable submit button
+    $('.btnAction').prop('disabled', true);
+
     fetch(ENDPOINT, {
       method: "POST",
       body: JSON.stringify({
@@ -15,6 +18,11 @@ function sendContact() {
       .then((response) => response.json())
       .then((data) => {
         $("#mail-status").html(`<p class='success'>${data.message}</p>`);
+        $("#userName").val("");
+        $("#userTel").val("");
+        $("#category").val("");
+        $(".demoInputBox").css("border-color", "");
+        $(".info").html("");
       })
       .catch((error) => {
         if (error.statusMessage) {
@@ -22,6 +30,10 @@ function sendContact() {
         } else {
           console.error("Error:", error);
         }
+      })
+      .finally(() => {
+        // Re-enable submit button after request completes
+        $('.btnAction').prop('disabled', false);
       });
   }
 }
@@ -48,6 +60,9 @@ function validateContact() {
 function sendAppointment() {
   const valid = validateAppointment();
   if (valid) {
+    // Disable submit button
+    $('.btnAction').prop('disabled', true);
+
     fetch(ENDPOINT, {
       method: "POST",
       body: JSON.stringify({
@@ -59,6 +74,10 @@ function sendAppointment() {
       .then((response) => response.json())
       .then((data) => {
         $("#mail-statusA").html(`<p class='success'>${data.message}</p>`);
+        $("#userNameA").val("");
+        $("#userTelA").val("");
+        $(".demoInputBox").css("border-color", "");
+        $(".info").html("");
       })
       .catch((error) => {
         if (error.statusMessage) {
@@ -68,6 +87,10 @@ function sendAppointment() {
         } else {
           console.error("Error:", error);
         }
+      })
+      .finally(() => {
+        // Re-enable submit button after request completes
+        $('.btnAction').prop('disabled', false);
       });
   }
 }
