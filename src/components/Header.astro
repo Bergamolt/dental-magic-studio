@@ -1,0 +1,59 @@
+---
+import "./Header.css";
+---
+
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top d-flex align-items-center">
+  <div
+    class="container-fluid d-flex align-items-center justify-content-between"
+  >
+    <div class="logo">
+      <img class="logo-img" src="assets/img/logo.png" alt="logo" />
+      <img class="logo-img-dark" src="assets/img/logo-dark.png" alt="logo" />
+    </div>
+
+    <nav id="navbar" class="navbar">
+      <ul>
+        <!-- <li><a class="nav-link scrollto active" href="#hero">Головна</a></li> -->
+        <li>
+          <a class="nav-link scrollto" href="#services">Послуги та ціни</a>
+        </li>
+        <li><a class="nav-link scrollto" href="#counts">Чому ми?</a></li>
+        <li><a class="nav-link scrollto" href="#warranty">Гарантії</a></li>
+        <li>
+          <a class="nav-link scrollto" href="#testimonials">Відгуки</a>
+        </li>
+        <li>
+          <a class="nav-link scrollto" href="#portfolio">Наші роботи</a>
+        </li>
+        <li><a class="nav-link scrollto" href="#contact">Контакти</a></li>
+        <li>
+          <a class="getstarted scrollto" href="#contact">Записатися на прийом</a
+          >
+        </li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav><!-- .navbar -->
+  </div>
+</header><!-- End Header -->
+
+<style>
+  #header .logo-img {
+    width: 204px;
+    height: 40px;
+  }
+
+  #header .logo-img-dark {
+    width: 204px;
+    height: 40px;
+    display: none;
+  }
+
+  #header.header-scrolled .logo-img-dark {
+    display: block;
+  }
+
+  #header.header-scrolled .logo-img {
+    display: none;
+  }
+</style>
