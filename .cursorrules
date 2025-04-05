@@ -1,0 +1,21 @@
+<commit-message-guidelines>
+- Use the present tense.
+- Use the active voice.
+- Use the first person.
+- Use the imperative mood.
+- Keep it short and concise.
+</commit-message-guidelines>
+
+<commit-message-examples>
+- "feat: add new feature"
+- "fix: fix bug"
+- "refactor: refactor code"
+- "style: improve readability"
+- "perf: remove unused code"
+- "docs: add documentation"
+- "chore: update dependencies"
+- "test: add tests"
+- "build: update build script"
+- "ci: update CI configuration"
+- "style: improve readability"
+</commit-message-examples>
