@@ -13,11 +13,23 @@ import "./Header.css";
       <img class="logo-img-dark" src="assets/img/logo-dark.png" alt="logo" />
     </div>
 
+    <!-- Контактная информация -->
+    <div class="contact-info d-none d-lg-flex align-items-center me-4">
+      <div class="address me-4">
+        <i class="bi bi-geo-alt"></i>
+        <span>вул. Січових Стрільців, 10, Київ</span>
+      </div>
+      <div class="phone text-bold">
+        <i class="bi bi-telephone"></i>
+        <a href="tel:+380441234567">+38 (044) 123-45-67</a>
+      </div>
+    </div>
+
     <!-- Кнопка записи -->
     <div class="d-flex align-items-center">
       <a class="getstarted scrollto appointment-button" href="#contact">Записатися на прийом</a>
       <!-- Мобильная навигация -->
-      <nav id="navbar" class="navbar d-block d-lg-none">
+      <nav id="navbar-mobile" class="navbar d-block d-lg-none">
         <ul>
           <!-- <li><a class="nav-link scrollto active" href="#hero">Головна</a></li> -->
           <li>
@@ -32,6 +44,16 @@ import "./Header.css";
             <a class="nav-link scrollto" href="#portfolio">Наші роботи</a>
           </li>
           <li><a class="nav-link scrollto" href="#contact">Контакти</a></li>
+          <li class="contact-info-mobile mx-auto mt-4">
+            <a class="nav-link" href="https://goo.gl/maps/1234">
+              <i class="bi bi-geo-alt"></i> вул. Січових Стрільців, 10, Київ
+            </a>
+          </li>
+          <li class="contact-info-mobile mx-auto">
+            <a class="nav-link" href="tel:+380441234567">
+              <i class="bi bi-telephone"></i> +38 (044) 123-45-67
+            </a>
+          </li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
@@ -78,5 +100,36 @@ import "./Header.css";
 
   #header.header-scrolled .logo-img {
     display: none;
+  }
+
+  /* Стили для контактной информации */
+  .contact-info {
+    font-size: 14px;
+  }
+
+  .contact-info i {
+    margin-right: 8px;
+    color: var(--color-primary);
+  }
+
+  .contact-info a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .contact-info a:hover {
+    color: var(--color-primary);
+  }
+
+  /* Стили для мобильной контактной информации */
+  .contact-info-mobile a {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+
+  .contact-info-mobile i {
+    margin-right: 8px;
+    color: var(--color-primary);
   }
 </style>
