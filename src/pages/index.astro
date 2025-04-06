@@ -682,39 +682,7 @@ import { ADDRESS, GOOGLE_MAPS_LINK, PHONE_NUMBER, PHONE_NUMBER_MASK } from "@/co
                 <h2>Записатися на прийом</h2>
               </div>
               <div class="cta-form">
-                <div id="frmContact">
-                  <div id="mail-statusA"></div>
-                  <div>
-                    <label style="padding-top:20px;">Ваше им'я</label>
-                    <span id="userNameA-info" class="info"></span><br />
-                    <input
-                      type="text"
-                      name="userName"
-                      id="userNameA"
-                      class="demoInputBox"
-                    />
-                  </div>
-                  <div>
-                    <label>Ваш телефон</label>
-                    <span id="userTel-info" class="info"></span><br />
-                    <input
-                      type="tel"
-                      name="userTel"
-                      id="userTelA"
-                      class="phone demoInputBox"
-                    />
-                  </div>
-
-                  <div>
-                    <div>
-                      <button
-                        name="submit"
-                        class="btnAction"
-                        onClick="sendAppointment();">Записатися</button
-                      >
-                    </div>
-                  </div>
-                </div>
+                <FormSection classNames="contact-form" />
               </div>
             </div>
             <div
