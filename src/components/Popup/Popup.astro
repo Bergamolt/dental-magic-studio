@@ -1,0 +1,136 @@
+---
+import FormSection from "../FormSection/FormSection.astro";
+---
+
+<div class="popup">
+  <div class="popup-overlay"></div>
+  <div class="popup-content">
+    <button class="popup-close">
+      <i class="bi bi-x"></i>
+    </button>
+    <div class="popup-header">
+      <h3>Записатися на прийом</h3>
+    </div>
+    <div class="popup-body">
+      <FormSection contained />
+    </div>
+  </div>
+</div>
+
+<style>
+  .popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    z-index: 1000;
+  }
+
+  .popup.popup-open {
+    visibility: visible;
+  }
+
+  .popup-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .popup.popup-open .popup-overlay {
+    opacity: 1;
+  }
+
+  .popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.7);
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .popup.popup-open .popup-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .popup-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #666;
+    transition: color 0.3s;
+  }
+
+  .popup-close:hover {
+    color: var(--gray);
+  }
+
+  .popup-header {
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .popup-header h3 {
+    margin: 0;
+    font-size: 28px;
+    margin: 0 0 10px 0;
+    padding: 0;
+    line-height: 1;
+    letter-spacing: 1px;
+    color: var(--gray);
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const popup = document.querySelector(".popup");
+    const appointmentButtons = document.querySelectorAll("#appointment-button");
+    const closeButton = document.querySelector(".popup-close");
+    const overlay = document.querySelector(".popup-overlay");
+
+    if (!popup || !closeButton || !overlay) {
+      console.error("Required elements not found");
+      return;
+    }
+
+    const openPopup = () => {
+      popup.classList.add("popup-open");
+      document.body.style.overflow = "hidden";
+    };
+
+    const closePopup = () => {
+      popup.classList.remove("popup-open");
+      document.body.style.overflow = "";
+    };
+
+    appointmentButtons.forEach((button) => {
+      button.addEventListener("click", (e) => {
+        e.preventDefault();
+        openPopup();
+      });
+    });
+
+    closeButton.addEventListener("click", closePopup);
+    overlay.addEventListener("click", closePopup);
+  });
+</script>

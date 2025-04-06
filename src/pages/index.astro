@@ -1,8 +1,10 @@
 ---
+import FormSection from "@/components/FormSection/FormSection.astro";
 import Header from "@/components/Header/Header.astro";
 import LoadScripts from "@/components/LoadScripts.astro";
 import Portfolio from "@/components/Portfolio.astro";
 import SocialLinks from "@/components/SocialLinks.astro";
+import { ADDRESS, GOOGLE_MAPS_LINK, PHONE_NUMBER, PHONE_NUMBER_MASK } from "@/constants";
 ---
 
 <!doctype html>
@@ -74,7 +76,7 @@ import SocialLinks from "@/components/SocialLinks.astro";
             <h2>Здорові зуби - гарна посмішка</h2>
             <!-- new data-aos-delay 800 -->
             <div>
-              <a href="#contact" class="btn-get-started scrollto"
+              <a id="appointment-button" class="btn-get-started scrollto"
                 >Записатися на прийом</a
               >
             </div>
@@ -884,14 +886,14 @@ import SocialLinks from "@/components/SocialLinks.astro";
                 <div>
                   <div class="location"></div>
                   <a
-                    href="https://www.google.com.ua/maps/place/Dental+Magic+Studio/@46.4165096,30.7210305,17z/data=!3m1!4b1!4m6!3m5!1s0x40c633006971ab41:0x4e317edb1eeac409!8m2!3d46.4165059!4d30.7236054!16s%2Fg%2F11vrr8pdq4?hl=ru&entry=ttu&g_ep=EgoyMDI1MDMyNS4xIKXMDSoASAFQAw%3D%3D"
-                    target="_blank">Одеса<br />вулиця Інглезі, 2А</a
+                    href={GOOGLE_MAPS_LINK}
+                    target="_blank">{ADDRESS}</a
                   >
                 </div>
 
                 <div>
                   <div class="telephone"></div>
-                  <a href="tel:+380661981195">+38 (066) 198-11-95</a>
+                  <a href=`tel:${PHONE_NUMBER}`>${PHONE_NUMBER_MASK}</a>
                 </div>
               </div>
             </div>
@@ -901,45 +903,7 @@ import SocialLinks from "@/components/SocialLinks.astro";
               data-aos="fade-up"
               data-aos-delay="300"
             >
-              <div id="frmContact">
-                <div id="mail-status"></div>
-                <div>
-                  <label style="padding-top:20px;">Ваше ім'я</label>
-                  <span id="userName-info" class="info"></span><br />
-                  <input
-                    type="text"
-                    name="userName"
-                    id="userName"
-                    class="demoInputBox"
-                  />
-                </div>
-                <div>
-                  <label>Ваш телефон</label>
-                  <span id="userTel-info" class="info"></span><br />
-                  <input
-                    type="tel"
-                    name="userTel"
-                    id="userTel"
-                    class="phone demoInputBox"
-                  />
-                </div>
-
-                <div>
-                  <div>
-                    <input
-                      type="hidden"
-                      id="category"
-                      name="subject"
-                      value="Запис на прийом"
-                    />
-                    <button
-                      name="submit"
-                      class="btnAction"
-                      onClick="sendContact();">Записатися</button
-                    >
-                  </div>
-                </div>
-              </div>
+              <FormSection />
             </div>
           </div>
         </div>

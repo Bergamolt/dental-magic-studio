@@ -1,5 +1,12 @@
 ---
 import "./Header.css";
+import {
+  PHONE_NUMBER,
+  PHONE_NUMBER_MASK,
+  ADDRESS,
+  GOOGLE_MAPS_LINK,
+} from "@/constants";
+import Popup from "../Popup/Popup.astro";
 ---
 
 <!-- ======= Header ======= -->
@@ -13,25 +20,27 @@ import "./Header.css";
       <img class="logo-img-dark" src="assets/img/logo-dark.png" alt="logo" />
     </div>
 
-    <!-- Контактная информация -->
     <div class="contact-info d-none d-lg-flex align-items-center me-4">
       <div class="address me-4">
         <i class="bi bi-geo-alt"></i>
-        <span>вул. Січових Стрільців, 10, Київ</span>
+        <span>{ADDRESS}</span>
       </div>
       <div class="phone text-bold">
         <i class="bi bi-telephone"></i>
-        <a href="tel:+380441234567">+38 (044) 123-45-67</a>
+        <a href=`tel:${PHONE_NUMBER}`>{PHONE_NUMBER_MASK}</a>
       </div>
     </div>
 
-    <!-- Кнопка записи -->
     <div class="d-flex align-items-center">
-      <a class="getstarted scrollto appointment-button" href="#contact">Записатися на прийом</a>
-      <!-- Мобильная навигация -->
+      <a id="appointment-button" class="getstarted scrollto appointment-button"
+        >Записатися на прийом</a
+      >
+      <a href="tel:+380441234567" class="pulse-button d-lg-none">
+        <i class="bi bi-telephone-fill"></i>
+      </a>
+
       <nav id="navbar-mobile" class="navbar d-block d-lg-none">
         <ul>
-          <!-- <li><a class="nav-link scrollto active" href="#hero">Головна</a></li> -->
           <li>
             <a class="nav-link scrollto" href="#services">Послуги та ціни</a>
           </li>
@@ -45,13 +54,15 @@ import "./Header.css";
           </li>
           <li><a class="nav-link scrollto" href="#contact">Контакти</a></li>
           <li class="contact-info-mobile mx-auto mt-4">
-            <a class="nav-link" href="https://goo.gl/maps/1234">
-              <i class="bi bi-geo-alt"></i> вул. Січових Стрільців, 10, Київ
+            <a class="nav-link" href={GOOGLE_MAPS_LINK}>
+              <i class="bi bi-geo-alt"></i>
+              {ADDRESS}
             </a>
           </li>
           <li class="contact-info-mobile mx-auto">
-            <a class="nav-link" href="tel:+380441234567">
-              <i class="bi bi-telephone"></i> +38 (044) 123-45-67
+            <a class="nav-link" href=`tel:${PHONE_NUMBER}`>
+              <i class="bi bi-telephone"></i>
+              {PHONE_NUMBER_MASK}
             </a>
           </li>
         </ul>
@@ -60,11 +71,9 @@ import "./Header.css";
     </div>
   </div>
 
-  <!-- Десктопная навигация -->
   <div id="header-bottom" class="container-fluid d-none d-lg-block">
     <nav id="navbar-desktop" class="navbar">
       <ul>
-        <!-- <li><a class="nav-link scrollto active" href="#hero">Головна</a></li> -->
         <li>
           <a class="nav-link scrollto" href="#services">Послуги та ціни</a>
         </li>
@@ -81,6 +90,8 @@ import "./Header.css";
     </nav>
   </div>
 </header><!-- End Header -->
+
+<Popup />
 
 <style>
   #header .logo-img {

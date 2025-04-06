@@ -1,0 +1,126 @@
+---
+type Props = {
+  contained?: boolean;
+};
+
+const { contained = false } = Astro.props;
+---
+
+<div id="frmContact">
+  <div id="mail-status"></div>
+  <div class={contained ? "contained" : ""}>
+    <label style="padding-top:20px;">Ваше ім'я</label>
+    <span id="userName-info" class="info"></span><br />
+    <input
+      type="text"
+      name="userName"
+      id="userName"
+      class="demoInputBox"
+      placeholder="Дмитро Іванов"
+    />
+  </div>
+  <div class={contained ? "contained" : ""}>
+    <label>Ваш телефон</label>
+    <span id="userTel-info" class="info"></span><br />
+    <input
+      type="tel"
+      name="userTel"
+      id="userTel"
+      class="phone demoInputBox"
+      placeholder="+38 (000) 000-00-00"
+    />
+  </div>
+
+  <div class={contained ? "contained" : ""}>
+    <div>
+      <input
+        type="hidden"
+        id="category"
+        name="subject"
+        value="Запис на прийом"
+      />
+      <button
+        name="submit"
+        class="btnAction"
+        onclick="sendContact();"
+      >
+        Записатися
+      </button>
+    </div>
+  </div>
+</div>
+
+<style>
+  /****************** form ***********************/
+
+  #frmContact {
+    margin-top: -40px;
+  }
+
+  #frmContact div {
+    margin-bottom: 15px;
+  }
+
+  #frmContact div label {
+    margin-left: 5px;
+  }
+
+  .demoInputBox {
+    padding: 10px;
+    border: #f0f0f0 1px solid;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .error {
+    background-color: #f42c04;
+    border: #c92403 1px solid;
+    padding: 5px 10px;
+    color: #ffffff;
+    border-radius: 4px;
+  }
+
+  .success {
+    background-color: #12cc1a;
+    border: #0fa015 1px solid;
+    padding: 5px 10px;
+    color: #ffffff;
+    border-radius: 4px;
+  }
+
+  .info {
+    font-size: 0.8em;
+    color: #ff6600;
+    letter-spacing: 2px;
+    padding-left: 5px;
+  }
+
+  .btnAction {
+    background: var(--button);
+    border: 1px solid var(--button);
+    padding: 10px 24px;
+    color: #fff;
+    transition: 0.4s;
+    border-radius: 0.25rem;
+  }
+
+  @media (max-width: 767px) {
+    #frmContact {
+      margin-top: inherit;
+    }
+  }
+
+  .contained {
+    width: 100% !important;
+
+    button {
+      width: 100% !important;
+    }
+
+    input {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+  }
+</style>
