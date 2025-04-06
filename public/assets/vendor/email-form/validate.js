@@ -23,6 +23,10 @@ function sendContact() {
         $("#category").val("");
         $(".demoInputBox").css("border-color", "");
         $(".info").html("");
+
+        setTimeout(() => {
+          window.location.href = "/dyakuyu-za-zapys";
+        }, 1000);
       })
       .catch((error) => {
         if (error.statusMessage) {
@@ -78,6 +82,10 @@ function sendAppointment() {
         $("#userTelA").val("");
         $(".demoInputBox").css("border-color", "");
         $(".info").html("");
+
+        setTimeout(() => {
+          window.location.href = "/dyakuyu-za-zapys";
+        }, 1000);
       })
       .catch((error) => {
         if (error.statusMessage) {

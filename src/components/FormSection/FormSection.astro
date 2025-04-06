@@ -1,12 +1,14 @@
 ---
 type Props = {
+  subject?: string;
   contained?: boolean;
+  classNames?: string;
 };
 
-const { contained = false } = Astro.props;
+const { subject = "Запис на прийом", contained = false, classNames = "" } = Astro.props;
 ---
 
-<div id="frmContact">
+<div id="frmContact" class={classNames}>
   <div id="mail-status"></div>
   <div class={contained ? "contained" : ""}>
     <label style="padding-top:20px;">Ваше ім'я</label>
@@ -33,17 +35,8 @@ const { contained = false } = Astro.props;
 
   <div class={contained ? "contained" : ""}>
     <div>
-      <input
-        type="hidden"
-        id="category"
-        name="subject"
-        value="Запис на прийом"
-      />
-      <button
-        name="submit"
-        class="btnAction"
-        onclick="sendContact();"
-      >
+      <input type="hidden" id="category" name="subject" value={subject} />
+      <button name="submit" class="btnAction" onclick="sendContact();">
         Записатися
       </button>
     </div>
@@ -51,12 +44,6 @@ const { contained = false } = Astro.props;
 </div>
 
 <style>
-  /****************** form ***********************/
-
-  #frmContact {
-    margin-top: -40px;
-  }
-
   #frmContact div {
     margin-bottom: 15px;
   }

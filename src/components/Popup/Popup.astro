@@ -25,11 +25,12 @@ import FormSection from "../FormSection/FormSection.astro";
     width: 100%;
     height: 100%;
     visibility: hidden;
-    z-index: 1000;
+    z-index: -1;
   }
 
   .popup.popup-open {
     visibility: visible;
+    z-index: 1000;
   }
 
   .popup-overlay {

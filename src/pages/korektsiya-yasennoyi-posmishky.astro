@@ -1,3 +1,7 @@
+---
+import FormSection from "@/components/FormSection/FormSection.astro";
+---
+
 <!DOCTYPE html>
 <html lang="uk">
 
@@ -71,27 +75,7 @@
                                 <li><strong>від 500 грн.</strong>: за зуб</li>
                             </ul>
                             <h3 class="mt-5">Записатися на прийом</h3>
-                            <div id="frmContact">
-                                <div id="mail-status"></div>
-                                <div>
-                                    <label style="padding-top:20px;">Ваше ім'я</label>
-                                    <span id="userName-info" class="info"></span><br />
-                                    <input type="text" name="userName" id="userName" class="demoInputBox">
-                                </div>
-                                <div>
-                                    <label>Ваш телефон</label>
-                                    <span id="userTel-info" class="info"></span><br />
-                                    <input type="tel" name="userTel" id="userTel" class="phone demoInputBox">
-                                </div>
-
-                                <div>
-
-                                    <div>
-                                        <input id="category" name="category" type="hidden" value="Запис на корекцію ясенної посмішки">
-                                        <button name="submit" class="btnAction" onClick="sendContact();">Записатися</button>
-                                    </div>
-                                </div>
-                            </div>
+                            <FormSection />
                         </div>
                         <div class="portfolio-description">
                             <h2>Корекція ясенної посмішки</h2>
