@@ -1,904 +1,795 @@
 ---
 import FormSection from "@/components/FormSection/FormSection.astro";
 import Header from "@/components/Header/Header.astro";
-import LoadScripts from "@/components/LoadScripts.astro";
 import Portfolio from "@/components/Portfolio.astro";
 import SocialLinks from "@/components/SocialLinks.astro";
-import { ADDRESS, GOOGLE_MAPS_LINK, PHONE_NUMBER, PHONE_NUMBER_MASK } from "@/constants";
+import {
+  ADDRESS,
+  GOOGLE_MAPS_LINK,
+  PHONE_NUMBER,
+  PHONE_NUMBER_MASK,
+} from "@/constants";
+import BaseLayout from "@/layouts/BaseLayout.astro";
 ---
 
-<!doctype html>
-<html lang="uk-UA">
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<BaseLayout
+  title="Dental Magic Studio - стоматологія в Одесі"
+  description="Dental Magic Studio - стоматологія в Одесі"
+  keywords="Стоматологія в Одесі, зубні протези, ортодонтія, протезування, відбілювання зубів, лікування зубів, хірургічна стоматологія, імплантація зубів, коронки, коронки з кераміки, коронки з композиту, коронки з металу, коронки з композиту та металу, коронки з кераміки та металу, коронки з кераміки та композиту, коронки з металу та композиту, коронки з кераміки та металу та композиту"
+  alternateUrl="https://drkravchenko.com.ua/"
+/>
+<Header />
 
-    <title>Dental Magic Studio - стоматологія в Одесі</title>
-    <meta
-      content="Стоматологія в Одесі, зубні протези, ортодонтія, протезування, відбілювання зубів, лікування зубів, хірургічна стоматологія, імплантація зубів, коронки, коронки з кераміки, коронки з композиту, коронки з металу, коронки з композиту та металу, коронки з кераміки та металу, коронки з кераміки та композиту, коронки з металу та композиту, коронки з кераміки та металу та композиту"
-      name="keywords"
-    />
-    <meta
-      content="Dental Magic Studio - стоматологія в Одесі"
-      name="description"
-    />
-
-    <link
-      rel="alternate"
-      hreflang="uk-UA"
-      href="https://drkravchenko.com.ua/"
-    />
-
-    <!-- Favicons -->
-    <link href="/assets/img/favicon.png" rel="icon" />
-    <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&family=Yanone+Kaffeesatz:wght@200;400&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Vendor CSS Files -->
-    <!-- <link href="/assets/vendor/aos/aos.css" rel="stylesheet"> -->
-    <link
-      href="/assets/vendor/bootstrap/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="/assets/vendor/glightbox/css/glightbox.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="/assets/vendor/bootstrap-icons/bootstrap-icons.css"
-      rel="stylesheet"
-    />
-    <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
-
-    <!-- Template Main CSS File -->
-    <link href="/assets/css/style.css" rel="stylesheet" />
-  </head>
-
-  <body>
-    <Header />
-
-    <!-- ======= Hero Section ======= -->
-    <section id="hero" class="d-flex align-items-center">
-      <div class="container-fluid">
-        <div class="row">
-          <div
-            class="pl-2 col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-end pe-5"
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex align-items-center">
+  <div class="container-fluid">
+    <div class="row">
+      <div
+        class="pl-2 col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-end pe-5"
+      >
+        <h1>Dental Magic Studio</h1>
+        <!-- old data-aos-delay 400 -->
+        <h2>Здорові зуби - гарна посмішка</h2>
+        <!-- new data-aos-delay 800 -->
+        <div>
+          <a id="appointment-button" class="btn-get-started scrollto"
+            >Записатися на прийом</a
           >
-            <h1>Dental Magic Studio</h1>
-            <!-- old data-aos-delay 400 -->
-            <h2>Здорові зуби - гарна посмішка</h2>
-            <!-- new data-aos-delay 800 -->
-            <div>
-              <a id="appointment-button" class="btn-get-started scrollto"
-                >Записатися на прийом</a
-              >
-            </div>
-          </div>
-          <div
-            class="col-lg-6 pt-5 pt-lg-0 order-1 order-lg-2 d-flex flex-column justify-content-center hero-bg"
-          >
-          </div>
         </div>
       </div>
-    </section><!-- End Hero -->
+      <div
+        class="col-lg-6 pt-5 pt-lg-0 order-1 order-lg-2 d-flex flex-column justify-content-center hero-bg"
+      >
+      </div>
+    </div>
+  </div>
+</section><!-- End Hero -->
 
-    <main id="main">
-      <!-- ======= Services Section ======= -->
-      <section id="services" class="services">
-        <div class="container">
-          <div class="section-title" data-aos="fade-up">
-            <h2>Наші послуг та ціни</h2>
-            <!--                    <p></p>-->
-          </div>
+<main id="main">
+  <!-- ======= Services Section ======= -->
+  <section id="services" class="services">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Наші послуг та ціни</h2>
+        <!--                    <p></p>-->
+      </div>
 
-          <div class="row">
-            <div class="col-md-6 d-flex align-items-stretch mb-5 mb-lg-0">
-              <a
-                href="/vidbilyuvannya-zubiv"
-                class="icon-box"
-                data-aos="fade-up"
-                data-aos-delay="100"
-              >
-                <div class="d-flex justify-content-start">
-                  <div class="icon otbelivaniye"></div>
-                  <h4 class="title text-uppercase">Відбілювання зубів</h4>
-                </div>
-                <p class="description">
-                  робить людину впевненішою в собі, дозволяє втілити в життя
-                  мрію про білосніжку посмішку
-                </p>
-                <div class="price-more d-flex justify-content-between">
-                  <!-- TODO: move to variables -->
-                  <div class="price">від 3 000 грн.</div>
-                  <div class="more">Детальніше</div>
-                </div>
-              </a>
-            </div>
-
-            <div class="col-md-6 d-flex align-items-stretch mb-5 mb-lg-0">
-              <a
-                href="/likuvannya-profilaktyka"
-                class="icon-box"
-                data-aos="fade-up"
-                data-aos-delay="200"
-              >
-                <div class="d-flex justify-content-start">
-                  <div class="icon lecheniye"></div>
-                  <h4 class="title text-uppercase">
-                    Лікування та профілактика
-                  </h4>
-                </div>
-                <p class="description">
-                  Вчасне лікування додає додаткові роки Вашим зубам<br />
-                  <i class="ri-check-double-line"></i>Професійна гігієна
-                  порожнини рота <br />
-                  <i class="ri-check-double-line"></i>Лікавання карієсів,
-                  пульпітів, переодотитів
-                </p>
-                <div class="price-more d-flex justify-content-between">
-                  <!-- TODO: move to variables -->
-                  <div class="price">від 1 800 грн.</div>
-                  <div class="more">Детальніше</div>
-                </div>
-              </a>
-            </div>
-
-            <div class="col-md-6 d-flex align-items-stretch mb-5 mb-lg-0">
-              <a
-                href="/keramichni-viniry"
-                class="icon-box"
-                data-aos="fade-up"
-                data-aos-delay="300"
-              >
-                <div class="d-flex justify-content-start">
-                  <div class="icon viniry"></div>
-                  <h4 class="title text-uppercase">Керамічні вініри</h4>
-                </div>
-                <p class="description">
-                  є незнімною накладкою на зуб. Вінір повторює анатомічну форму
-                  Вашого зуба та імітує емаль
-                </p>
-                <div class="price-more d-flex justify-content-between">
-                  <!-- TODO: move to variables -->
-                  <div class="price">від 12 000 грн.</div>
-                  <div class="more">Детальніше</div>
-                </div>
-              </a>
-            </div>
-
-            <div class="col-md-6 d-flex align-items-stretch mb-5 mb-lg-0">
-              <a
-                href="/khudozhnya-restavratsiya"
-                class="icon-box"
-                data-aos="fade-up"
-                data-aos-delay="400"
-              >
-                <div class="d-flex justify-content-start">
-                  <div class="icon restavratsiya"></div>
-                  <h4 class="title text-uppercase">Художня реставрація</h4>
-                </div>
-                <p class="description">
-                  передбачає повне відновлення форми, кольору зуба за допомогою
-                  накладання спеціальних композитів, що дозволяють повністю
-                  відновити природну структуру емалі.
-                </p>
-                <div class="price-more d-flex justify-content-between">
-                  <!-- TODO: move to variables -->
-                  <div class="price">від 4 000 грн.</div>
-                  <div class="more">Детальніше</div>
-                </div>
-              </a>
-            </div>
-
-            <div class="col-md-6 d-flex align-items-stretch mb-5 mb-lg-0">
-              <a
-                href="/khirurhichna-stomatolohiya"
-                class="icon-box"
-                data-aos="fade-up"
-                data-aos-delay="400"
-              >
-                <div class="d-flex justify-content-start">
-                  <div class="icon khirurgiya"></div>
-                  <h4 class="title text-uppercase">Хірургічна стоматологія</h4>
-                </div>
-                <p class="description">
-                  Перше із чим, зазвичай, асоціюється хірургічна стоматологія -
-                  це видалення зуба мудрості. Хоча це поняття набагато ширше
-                </p>
-                <div class="price-more d-flex justify-content-between">
-                  <!-- TODO: move to variables -->
-                  <div class="price">від 2 500 грн.</div>
-                  <div class="more">Детальніше</div>
-                </div>
-              </a>
-            </div>
-
-            <div class="col-md-6 d-flex align-items-stretch mb-5 mb-lg-0">
-              <a
-                href="/implantatsiya-zubiv"
-                class="icon-box"
-                data-aos="fade-up"
-                data-aos-delay="400"
-              >
-                <div class="d-flex justify-content-start">
-                  <div class="icon implantatsiya"></div>
-                  <h4 class="title text-uppercase">Імплантація зубів</h4>
-                </div>
-                <p class="description">
-                  імплантанти замінюють собою коріння втрачених зубів, що
-                  дозволяє, згодом, провести відновлення зубного ряду
-                </p>
-                <div class="price-more d-flex justify-content-between">
-                  <!-- TODO: move to variables -->
-                  <div class="price">від 14 000 грн.</div>
-                  <div class="more">Детальніше</div>
-                </div>
-              </a>
-            </div>
-
-            <div class="col-md-6 d-flex align-items-stretch mb-5 mb-lg-0">
-              <a
-                href="/protezuvannya-zubiv"
-                class="icon-box"
-                data-aos="fade-up"
-                data-aos-delay="400"
-              >
-                <div class="d-flex justify-content-start">
-                  <div class="icon protezirovaniye"></div>
-                  <h4 class="title text-uppercase">Протезування зубів</h4>
-                </div>
-                <p class="description">
-                  це шанс кожної людини відновити прогалини в зубному ряді, мати
-                  гарну посмішку та уникнути проблем зі здоров'ям
-                </p>
-                <div class="price-more d-flex justify-content-between">
-                  <!-- TODO: move to variables -->
-                  <div class="price">від 7 000 грн.</div>
-                  <div class="more">Детальніше</div>
-                </div>
-              </a>
-            </div>
-
-            <div class="col-md-6 d-flex align-items-stretch mb-5 mb-lg-0">
-              <a
-                href="/ortodontiya"
-                class="icon-box"
-                data-aos="fade-up"
-                data-aos-delay="400"
-              >
-                <div class="d-flex justify-content-start">
-                  <div class="icon ortodontiya"></div>
-                  <h4 class="title text-uppercase">Ортодонтія</h4>
-                </div>
-                <p class="description">
-                  напрям стоматології, що займається виправленням прикусу та
-                  вирівнювання зубного ряду
-                </p>
-                <div class="price-more d-flex justify-content-between">
-                  <!-- TODO: move to variables -->
-                  <div class="price">від 13 500 грн.</div>
-                  <div class="more">Детальніше</div>
-                </div>
-              </a>
-            </div>
-
-            <div class="col-md-6 d-flex align-items-stretch mb-5 mb-lg-0">
-              <a
-                href="/korektsiya-yasennoyi-posmishky"
-                class="icon-box"
-                data-aos="fade-up"
-                data-aos-delay="400"
-              >
-                <div class="d-flex justify-content-start">
-                  <div class="icon korrektsiya"></div>
-                  <h4 class="title text-uppercase">
-                    Корекція ясенної посмішки
-                  </h4>
-                </div>
-                <p class="description">
-                  сІснує таке фізіологічне явище як ясна посмішка. Коли ясна
-                  надмірно покривають зуби і при усмішці їх не видно
-                </p>
-                <div class="price-more d-flex justify-content-between">
-                  <!-- TODO: move to variables -->
-                  <div class="price">від 500 грн.</div>
-                  <div class="more">Детальніше</div>
-                </div>
-              </a>
-            </div>
-
-            <div class="col-md-6 d-flex align-items-stretch mb-5 mb-lg-0">
-              <a
-                href="/dytyacha-stomatolohiya"
-                class="icon-box"
-                data-aos="fade-up"
-                data-aos-delay="400"
-              >
-                <div class="d-flex justify-content-start">
-                  <div class="icon detskaya"></div>
-                  <h4 class="title text-uppercase">Дитяча стоматологія</h4>
-                </div>
-                <p class="description">
-                  Якщо дитина все ще боїться стоматолога, то Вам однозначно
-                  потрібно прийти до нас на прийом. Ми із задоволенням замінимо
-                  страх на радість
-                </p>
-                <div class="price-more d-flex justify-content-between">
-                  <!-- TODO: move to variables -->
-                  <div class="price">від 800 грн.</div>
-                  <div class="more">Детальніше</div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section><!-- End Services Section -->
-
-      <!-- ======= Counts Section ======= -->
-      <section id="counts" class="counts section-bg">
-        <div class="container">
-          <div class="section-title" data-aos="fade-up">
-            <h2>Чому ми?</h2>
-          </div>
-          <div class="row">
-            <div
-              class="image col-md-6 d-flex align-items-stretch justify-content-center"
-              data-aos="fade-right"
-              data-aos-delay="150"
-            >
-              <div class="vid">
-                <video
-                  class="lazy"
-                  autoplay
-                  muted
-                  loop
-                  playsinline
-                  preload="metadata"
-                  width="352"
-                  height="640"
-                >
-                  <source
-                    data-src="/assets/video/dentist-kravchenko-v2.mp4"
-                    type="video/mp4"
-                  />
-                </video>
-              </div>
-            </div>
-
-            <div
-              class="col-md-6 d-flex align-items-stretch pt-4 pt-xl-0"
-              data-aos="fade-left"
-              data-aos-delay="300"
-            >
-              <div class="content d-flex flex-column justify-content-center">
-                <div class="row">
-                  <div class="d-md-flex align-items-md-stretch">
-                    <div class="count-box d-flex align-content-center">
-                      <div class="icon happy-client"></div>
-                      <p>
-                        Більше <span
-                          data-purecounter-start="0"
-                          data-purecounter-end="10000"
-                          data-purecounter-duration="3"
-                          class="purecounter"></span>
-                        <strong>пацієнтів</strong><br /> стали володарями посмішки
-                        своєї мрії
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="d-md-flex align-items-md-stretch">
-                    <div class="count-box d-flex align-content-center">
-                      <div class="icon everyone"></div>
-
-                      <p>
-                        <strong>Кожний</strong> наш пацієнт<br /> відчуває комфорт
-                        та спокій під час прийому
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="d-md-flex align-items-md-stretch">
-                    <div class="count-box d-flex align-content-center">
-                      <div class="icon bezboli"></div>
-
-                      <p>
-                        <strong>Без болі та страху</strong><br /> Використовуємо
-                        сучасні методи знеболення
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="d-md-flex align-items-md-stretch">
-                    <div class="count-box d-flex align-content-center">
-                      <div class="icon zoom"></div>
-
-                      <p>
-                        <strong>Робота на збільшення</strong><br /> Адже лише при
-                        використанні збільшення можна досягти точного результату
-                        лікування
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div><!-- End .content-->
-            </div>
-          </div>
-        </div>
-      </section><!-- End Counts Section -->
-      <!-- ======= Warranty Section ======= -->
-      <section id="warranty" class="warranty">
-        <div class="container">
-          <div class="section-title" data-aos="fade-up">
-            <h2>Гарантії</h2>
-          </div>
-          <div class="row">
-            <div data-aos="fade-up" data-aos-delay="150">
-              <p>
-                Ми працюємо на якісний результат, гарантований відповідальним
-                підходом до виконання наших зобов'язань.
-              </p>
-              <p>
-                Гарантії для нас, насамперед - це наша відкрита професійна
-                позиція.
-              </p>
-              <p>Нижче наведено гарантійні терміни та терміни служби.</p>
-              <p>
-                Ця інформація дозволить Вам правильно оцінити запропоновані
-                послуги.
-              </p>
-            </div>
-            <div
-              class="row fw-bolder mt-3"
-              data-aos="fade-up"
-              data-aos-delay="300"
-            >
-              <div
-                class="col-sm-6 col-md-6 d-flex align-items-stretch justify-content-center"
-              >
-                Послуга
-              </div>
-              <div
-                class="col-sm-3 col-md-3 d-flex align-items-stretch justify-content-center"
-              >
-                Гарантія
-              </div>
-              <div
-                class="col-sm-3 col-md-3 d-flex align-items-stretch justify-content-center"
-              >
-                Термін служби
-              </div>
-            </div>
-            <div
-              class="row mt-3 table-row"
-              data-aos="fade-up"
-              data-aos-delay="350"
-            >
-              <div
-                class="col-sm-6 col-md-6 d-flex align-items-stretch justify-content-start"
-              >
-                Реставрація із композитних матеріалів
-              </div>
-              <div
-                class="col-sm-3 col-md-3 d-flex align-items-stretch justify-content-center"
-              >
-                1 рік
-              </div>
-              <div
-                class="col-sm-3 col-md-3 d-flex align-items-stretch justify-content-center"
-              >
-                5 років
-              </div>
-            </div>
-            <div
-              class="row mt-3 table-row"
-              data-aos="fade-up"
-              data-aos-delay="450"
-            >
-              <div
-                class="col-sm-6 col-md-6 d-flex align-items-stretch justify-content-start"
-              >
-                Керамічні реставрації (вкладки, накладки)
-              </div>
-              <div
-                class="col-sm-3 col-md-3 d-flex align-items-stretch justify-content-center"
-              >
-                3 років
-              </div>
-              <div
-                class="col-sm-3 col-md-3 d-flex align-items-stretch justify-content-center"
-              >
-                15 років
-              </div>
-            </div>
-            <div
-              class="row mt-3 table-row"
-              data-aos="fade-up"
-              data-aos-delay="500"
-            >
-              <div
-                class="col-sm-6 col-md-6 d-flex align-items-stretch justify-content-start"
-              >
-                Класичні металокерамічні коронки
-              </div>
-              <div
-                class="col-sm-3 col-md-3 d-flex align-items-stretch justify-content-center"
-              >
-                1 рік
-              </div>
-              <div
-                class="col-sm-3 col-md-3 d-flex align-items-stretch justify-content-center"
-              >
-                7 років
-              </div>
-            </div>
-            <div
-              class="row mt-3 table-row"
-              data-aos="fade-up"
-              data-aos-delay="550"
-            >
-              <div
-                class="col-sm-6 col-md-6 d-flex align-items-stretch justify-content-start"
-              >
-                Високоестетичні керамічні коронки
-              </div>
-              <div
-                class="col-sm-3 col-md-3 d-flex align-items-stretch justify-content-center"
-              >
-                3 років
-              </div>
-              <div
-                class="col-sm-3 col-md-3 d-flex align-items-stretch justify-content-center"
-              >
-                15 років
-              </div>
-            </div>
-            <div
-              class="row mt-3 table-row"
-              data-aos="fade-up"
-              data-aos-delay="600"
-            >
-              <div
-                class="col-sm-6 col-md-6 d-flex align-items-stretch justify-content-start"
-              >
-                Коронки (постійні) на імплантатах
-              </div>
-              <div
-                class="col-sm-3 col-md-3 d-flex align-items-stretch justify-content-center"
-              >
-                3 роки
-              </div>
-              <div
-                class="col-sm-3 col-md-3 d-flex align-items-stretch justify-content-center"
-              >
-                15 років
-              </div>
-            </div>
-            <div
-              class="row mt-3 table-row"
-              data-aos="fade-up"
-              data-aos-delay="650"
-            >
-              <div
-                class="col-sm-6 col-md-6 d-flex align-items-stretch justify-content-start"
-              >
-                Коронки пластмасові тимчасові
-              </div>
-              <div
-                class="col-sm-3 col-md-3 d-flex align-items-stretch justify-content-center"
-              >
-                -
-              </div>
-              <div
-                class="col-sm-3 col-md-3 d-flex align-items-stretch justify-content-center"
-              >
-                1 місяць
-              </div>
-            </div>
-            <div
-              class="row mt-3 table-row"
-              data-aos="fade-up"
-              data-aos-delay="700"
-            >
-              <div
-                class="col-sm-6 col-md-6 d-flex align-items-stretch justify-content-start"
-              >
-                Імплантат дентальний (стоматологічний)
-              </div>
-              <div
-                class="col-sm-3 col-md-3 d-flex align-items-stretch justify-content-center"
-              >
-                3 роки
-              </div>
-              <div
-                class="col-sm-3 col-md-3 d-flex align-items-stretch justify-content-center"
-              >
-                на протязі всього життя
-              </div>
-            </div>
-            <div class="mt-5" data-aos="fade-up" data-aos-delay="800">
-              <p>
-                У питаннях особистого здоров'я та краси важлива довіра та
-                впевненість у результаті. І вибір клініки часто робиться,
-                ґрунтуючись на думці людей, яким довіряєш. Ми це знаємо, адже
-                багато нових пацієнтів приходять до нас саме за рекомендаціями
-                своїх друзів, колег та партнерів.
-              </p>
-              <p>
-                Необхідно сказати, що «Гарантія» та «Термін служби» – це різні
-                поняття. Але в медицині їх часто використовують із рекламною
-                метою без уточнення, про що йдеться мова.
-              </p>
-              <p>
-                Гарантія — це зобов'язання перед Пацієнтом, що зафіксована в
-                порожнині рота дентальна конструкція (реставрації зуба, коронки,
-                імпланти чи вініри) виконуватимуть свої прямі функції,
-                зберігатимуть свою цілісність і міцність. В іншому випадку,
-                будуть перероблені повністю за рахунок клініки
-              </p>
-              <p>
-                Термін служби - це період часу у світовій стоматологічній
-                практиці, протягом якого, при правильному обігу, дентальні
-                конструкції продовжать виконувати свої функції, зберігаючи
-                міцність, цілісність та задані естетичні параметри.
-              </p>
-              <p>
-                У медицині часто маніпулюють поняттями гарантій, особливо щодо
-                лікування та/або лікування. Проте, гарантії лікування у західній
-                медичній практиці немає. Цивілізовані клініки та лікарі
-                використовують чіткі поняття «прогнозу», «очікуваного
-                результату» та «статистики успішних втручань та операцій».
-              </p>
-              <p>
-                Який з варіантів: художня реставрація, коронка або імплантанти
-                підійде саме Вам зможе порадити лікар.
-              </p>
-              <p>
-                Вивчивши на консультації Вашу ситуацію, особливості організму і
-                стиль життя, ми підбираємо найкраще рішення. Тому ми приділяємо
-                особливу увагу Першій зустрічі та Першому етапу!
-              </p>
-              <p>Ми із задоволенням відповімо на всі Ваші питання.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="cta" class="cta bg-gray">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-8" data-aos="fade-up">
-              <div
-                class="section-title"
-                data-aos="fade-up"
-                data-aos-delay="300"
-              >
-                <h2>Записатися на прийом</h2>
-              </div>
-              <div class="cta-form">
-                <FormSection classNames="contact-form" />
-              </div>
-            </div>
-            <div
-              class="col-md-2 docphoto"
-              data-aos="fade-left"
-              data-aos-delay="300"
-            >
-              <img
-                lazyload
-                src="/assets/img/dr_kravchenko_dentist.png"
-                alt=""
-              />
-            </div>
-            <div
-              class="col-md-2 docphoto doc2photo"
-              data-aos="fade-left"
-              data-aos-delay="500"
-            >
-              <img lazyload src="/assets/img/doctor-2.png" alt="" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ======= Testimonials Section ======= -->
-      <section id="testimonials" class="testimonials">
-        <div class="container">
-          <div class="section-title" data-aos="fade-up">
-            <h2>Відгуки</h2>
-          </div>
-
-          <div
-            class="testimonials-slider swiper"
+      <div class="row">
+        <div class="col-md-6 d-flex align-items-stretch mb-5 mb-lg-0">
+          <a
+            href="/vidbilyuvannya-zubiv"
+            class="icon-box"
             data-aos="fade-up"
             data-aos-delay="100"
           >
-            <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <div class="testimonial-wrap">
-                  <div class="testimonial-item">
-                    <figure>
-                      <a
-                        href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDIwNDQzNTI4MjA1NzY3?story_media_id=2665550383294795165&utm_medium=copy_link"
-                        target="_blank"
-                        ><img
-                          lazyload
-                          src="/assets/img/testimonials/dr-kravchenko-otzyv-1.jpg"
-                          alt=""
-                        /></a
-                      >
-                    </figure>
-                  </div>
-                </div>
-              </div><!-- End testimonial item -->
-
-              <div class="swiper-slide">
-                <div class="testimonial-wrap">
-                  <div class="testimonial-item">
-                    <figure>
-                      <a
-                        href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDIwNDQzNTI4MjA1NzY3?story_media_id=2665550383294795165&utm_medium=copy_link"
-                        target="_blank"
-                        ><img
-                          lazyload
-                          src="/assets/img/testimonials/dr-kravchenko-otzyv-2.jpg"
-                          alt=""
-                        /></a
-                      >
-                    </figure>
-                  </div>
-                </div>
-              </div><!-- End testimonial item -->
-
-              <div class="swiper-slide">
-                <div class="testimonial-wrap">
-                  <div class="testimonial-item">
-                    <figure>
-                      <a
-                        href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDIwNDQzNTI4MjA1NzY3?story_media_id=2665550383294795165&utm_medium=copy_link"
-                        target="_blank"
-                        ><img
-                          lazyload
-                          src="/assets/img/testimonials/dr-kravchenko-otzyv-3.jpg"
-                          alt=""
-                        /></a
-                      >
-                    </figure>
-                  </div>
-                </div>
-              </div><!-- End testimonial item -->
-
-              <div class="swiper-slide">
-                <div class="testimonial-wrap">
-                  <div class="testimonial-item">
-                    <figure>
-                      <a
-                        href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDIwNDQzNTI4MjA1NzY3?story_media_id=2665550383294795165&utm_medium=copy_link"
-                        target="_blank"
-                        ><img
-                          lazyload
-                          src="/assets/img/testimonials/dr-kravchenko-otzyv-5.jpg"
-                          alt=""
-                        /></a
-                      >
-                    </figure>
-                  </div>
-                </div>
-              </div><!-- End testimonial item -->
-
-              <div class="swiper-slide">
-                <div class="testimonial-wrap">
-                  <div class="testimonial-item">
-                    <figure>
-                      <a
-                        href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDIwNDQzNTI4MjA1NzY3?story_media_id=2665550383294795165&utm_medium=copy_link"
-                        target="_blank"
-                        ><img
-                          lazyload
-                          src="/assets/img/testimonials/dr-kravchenko-otzyv-6.jpg"
-                          alt=""
-                        /></a
-                      >
-                    </figure>
-                  </div>
-                </div>
-              </div><!-- End testimonial item -->
+            <div class="d-flex justify-content-start">
+              <div class="icon otbelivaniye"></div>
+              <h4 class="title text-uppercase">Відбілювання зубів</h4>
             </div>
-            <div class="swiper-pagination"></div>
-          </div>
-          <div class="row text-center" data-aos="fade-up" data-aos-delay="300">
-            <a
-              href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDIwNDQzNTI4MjA1NzY3?story_media_id=2665550383294795165&utm_medium=copy_link"
-              target="_blank"
-              class="igreviews"
-              ><i class="bi bi-instagram"></i> Дивитися відгуки у Instagram</a
-            >
-          </div>
+            <p class="description">
+              робить людину впевненішою в собі, дозволяє втілити в життя мрію
+              про білосніжку посмішку
+            </p>
+            <div class="price-more d-flex justify-content-between">
+              <!-- TODO: move to variables -->
+              <div class="price">від 3 000 грн.</div>
+              <div class="more">Детальніше</div>
+            </div>
+          </a>
         </div>
-      </section><!-- End Testimonials Section -->
 
-      <Portfolio />
-
-      <!-- ======= Contact Section ======= -->
-      <section id="contact" class="contact">
-        <div class="container">
-          <div class="section-title" data-aos="fade-up">
-            <h2>Контакти</h2>
-          </div>
-
-          <div class="row">
-            <div
-              class="col-lg-4 col-md-6"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <div class="contact-about">
-                <h3>Dental Magic Studio</h3>
-                <p>Здорові зуби - гарна посмішка</p>
-                <SocialLinks />
-              </div>
+        <div class="col-md-6 d-flex align-items-stretch mb-5 mb-lg-0">
+          <a
+            href="/likuvannya-profilaktyka"
+            class="icon-box"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="d-flex justify-content-start">
+              <div class="icon lecheniye"></div>
+              <h4 class="title text-uppercase">Лікування та профілактика</h4>
             </div>
-
-            <div
-              class="col-lg-4 col-md-6 mt-4 mt-md-0"
-              data-aos="fade-up"
-              data-aos-delay="200"
-            >
-              <div class="info">
-                <div>
-                  <div class="location"></div>
-                  <a
-                    href={GOOGLE_MAPS_LINK}
-                    target="_blank">{ADDRESS}</a
-                  >
-                </div>
-
-                <div>
-                  <div class="telephone"></div>
-                  <a href=`tel:${PHONE_NUMBER}`>{PHONE_NUMBER_MASK}</a>
-                </div>
-              </div>
+            <p class="description">
+              Вчасне лікування додає додаткові роки Вашим зубам<br />
+              <i class="ri-check-double-line"></i>Професійна гігієна порожнини
+              рота <br />
+              <i class="ri-check-double-line"></i>Лікавання карієсів, пульпітів,
+              переодотитів
+            </p>
+            <div class="price-more d-flex justify-content-between">
+              <!-- TODO: move to variables -->
+              <div class="price">від 1 800 грн.</div>
+              <div class="more">Детальніше</div>
             </div>
-
-            <div
-              class="col-lg-4 col-md-12"
-              data-aos="fade-up"
-              data-aos-delay="300"
-            >
-              <FormSection classNames="contact-form" />
-            </div>
-          </div>
+          </a>
         </div>
-      </section><!-- End Contact Section -->
-    </main><!-- End #main -->
 
-    <!-- ======= Footer ======= -->
-    <footer id="footer" class="bg-gray">
-      <div class="container">
-        <div class="row d-flex align-items-center">
-          <div class="col-lg-6 text-lg-left text-center">
-            <div class="copyright">
-              &copy; Copyright 2021. Всі права захищені
+        <div class="col-md-6 d-flex align-items-stretch mb-5 mb-lg-0">
+          <a
+            href="/keramichni-viniry"
+            class="icon-box"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="d-flex justify-content-start">
+              <div class="icon viniry"></div>
+              <h4 class="title text-uppercase">Керамічні вініри</h4>
             </div>
-            <div class="credits"></div>
-          </div>
-          <div class="col-lg-6"></div>
+            <p class="description">
+              є незнімною накладкою на зуб. Вінір повторює анатомічну форму
+              Вашого зуба та імітує емаль
+            </p>
+            <div class="price-more d-flex justify-content-between">
+              <!-- TODO: move to variables -->
+              <div class="price">від 12 000 грн.</div>
+              <div class="more">Детальніше</div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-6 d-flex align-items-stretch mb-5 mb-lg-0">
+          <a
+            href="/khudozhnya-restavratsiya"
+            class="icon-box"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="d-flex justify-content-start">
+              <div class="icon restavratsiya"></div>
+              <h4 class="title text-uppercase">Художня реставрація</h4>
+            </div>
+            <p class="description">
+              передбачає повне відновлення форми, кольору зуба за допомогою
+              накладання спеціальних композитів, що дозволяють повністю
+              відновити природну структуру емалі.
+            </p>
+            <div class="price-more d-flex justify-content-between">
+              <!-- TODO: move to variables -->
+              <div class="price">від 4 000 грн.</div>
+              <div class="more">Детальніше</div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-6 d-flex align-items-stretch mb-5 mb-lg-0">
+          <a
+            href="/khirurhichna-stomatolohiya"
+            class="icon-box"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="d-flex justify-content-start">
+              <div class="icon khirurgiya"></div>
+              <h4 class="title text-uppercase">Хірургічна стоматологія</h4>
+            </div>
+            <p class="description">
+              Перше із чим, зазвичай, асоціюється хірургічна стоматологія - це
+              видалення зуба мудрості. Хоча це поняття набагато ширше
+            </p>
+            <div class="price-more d-flex justify-content-between">
+              <!-- TODO: move to variables -->
+              <div class="price">від 2 500 грн.</div>
+              <div class="more">Детальніше</div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-6 d-flex align-items-stretch mb-5 mb-lg-0">
+          <a
+            href="/implantatsiya-zubiv"
+            class="icon-box"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="d-flex justify-content-start">
+              <div class="icon implantatsiya"></div>
+              <h4 class="title text-uppercase">Імплантація зубів</h4>
+            </div>
+            <p class="description">
+              імплантанти замінюють собою коріння втрачених зубів, що дозволяє,
+              згодом, провести відновлення зубного ряду
+            </p>
+            <div class="price-more d-flex justify-content-between">
+              <!-- TODO: move to variables -->
+              <div class="price">від 14 000 грн.</div>
+              <div class="more">Детальніше</div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-6 d-flex align-items-stretch mb-5 mb-lg-0">
+          <a
+            href="/protezuvannya-zubiv"
+            class="icon-box"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="d-flex justify-content-start">
+              <div class="icon protezirovaniye"></div>
+              <h4 class="title text-uppercase">Протезування зубів</h4>
+            </div>
+            <p class="description">
+              це шанс кожної людини відновити прогалини в зубному ряді, мати
+              гарну посмішку та уникнути проблем зі здоров'ям
+            </p>
+            <div class="price-more d-flex justify-content-between">
+              <!-- TODO: move to variables -->
+              <div class="price">від 7 000 грн.</div>
+              <div class="more">Детальніше</div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-6 d-flex align-items-stretch mb-5 mb-lg-0">
+          <a
+            href="/ortodontiya"
+            class="icon-box"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="d-flex justify-content-start">
+              <div class="icon ortodontiya"></div>
+              <h4 class="title text-uppercase">Ортодонтія</h4>
+            </div>
+            <p class="description">
+              напрям стоматології, що займається виправленням прикусу та
+              вирівнювання зубного ряду
+            </p>
+            <div class="price-more d-flex justify-content-between">
+              <!-- TODO: move to variables -->
+              <div class="price">від 13 500 грн.</div>
+              <div class="more">Детальніше</div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-6 d-flex align-items-stretch mb-5 mb-lg-0">
+          <a
+            href="/korektsiya-yasennoyi-posmishky"
+            class="icon-box"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="d-flex justify-content-start">
+              <div class="icon korrektsiya"></div>
+              <h4 class="title text-uppercase">Корекція ясенної посмішки</h4>
+            </div>
+            <p class="description">
+              сІснує таке фізіологічне явище як ясна посмішка. Коли ясна
+              надмірно покривають зуби і при усмішці їх не видно
+            </p>
+            <div class="price-more d-flex justify-content-between">
+              <!-- TODO: move to variables -->
+              <div class="price">від 500 грн.</div>
+              <div class="more">Детальніше</div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-6 d-flex align-items-stretch mb-5 mb-lg-0">
+          <a
+            href="/dytyacha-stomatolohiya"
+            class="icon-box"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="d-flex justify-content-start">
+              <div class="icon detskaya"></div>
+              <h4 class="title text-uppercase">Дитяча стоматологія</h4>
+            </div>
+            <p class="description">
+              Якщо дитина все ще боїться стоматолога, то Вам однозначно потрібно
+              прийти до нас на прийом. Ми із задоволенням замінимо страх на
+              радість
+            </p>
+            <div class="price-more d-flex justify-content-between">
+              <!-- TODO: move to variables -->
+              <div class="price">від 800 грн.</div>
+              <div class="more">Детальніше</div>
+            </div>
+          </a>
         </div>
       </div>
-    </footer><!-- End Footer -->
+    </div>
+  </section><!-- End Services Section -->
 
-    <a
-      href="#"
-      class="back-to-top d-flex align-items-center justify-content-center"
-      ><i class="bi bi-arrow-up-short"></i></a
-    >
+  <!-- ======= Counts Section ======= -->
+  <section id="counts" class="counts section-bg">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Чому ми?</h2>
+      </div>
+      <div class="row">
+        <div
+          class="image col-md-6 d-flex align-items-stretch justify-content-center"
+          data-aos="fade-right"
+          data-aos-delay="150"
+        >
+          <div class="vid">
+            <video
+              class="lazy"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              width="352"
+              height="640"
+            >
+              <source
+                data-src="/assets/video/dentist-kravchenko-v2.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
+        </div>
 
-    <LoadScripts />
-  </body>
-</html>
+        <div
+          class="col-md-6 d-flex align-items-stretch pt-4 pt-xl-0"
+          data-aos="fade-left"
+          data-aos-delay="300"
+        >
+          <div class="content d-flex flex-column justify-content-center">
+            <div class="row">
+              <div class="d-md-flex align-items-md-stretch">
+                <div class="count-box d-flex align-content-center">
+                  <div class="icon happy-client"></div>
+                  <p>
+                    Більше <span
+                      data-purecounter-start="0"
+                      data-purecounter-end="10000"
+                      data-purecounter-duration="3"
+                      class="purecounter"></span>
+                    <strong>пацієнтів</strong><br /> стали володарями посмішки своєї
+                    мрії
+                  </p>
+                </div>
+              </div>
+
+              <div class="d-md-flex align-items-md-stretch">
+                <div class="count-box d-flex align-content-center">
+                  <div class="icon everyone"></div>
+
+                  <p>
+                    <strong>Кожний</strong> наш пацієнт<br /> відчуває комфорт та
+                    спокій під час прийому
+                  </p>
+                </div>
+              </div>
+
+              <div class="d-md-flex align-items-md-stretch">
+                <div class="count-box d-flex align-content-center">
+                  <div class="icon bezboli"></div>
+
+                  <p>
+                    <strong>Без болі та страху</strong><br /> Використовуємо сучасні
+                    методи знеболення
+                  </p>
+                </div>
+              </div>
+
+              <div class="d-md-flex align-items-md-stretch">
+                <div class="count-box d-flex align-content-center">
+                  <div class="icon zoom"></div>
+
+                  <p>
+                    <strong>Робота на збільшення</strong><br /> Адже лише при використанні
+                    збільшення можна досягти точного результату лікування
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div><!-- End .content-->
+        </div>
+      </div>
+    </div>
+  </section><!-- End Counts Section -->
+  <!-- ======= Warranty Section ======= -->
+  <section id="warranty" class="warranty">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Гарантії</h2>
+      </div>
+      <div class="row">
+        <div data-aos="fade-up" data-aos-delay="150">
+          <p>
+            Ми працюємо на якісний результат, гарантований відповідальним
+            підходом до виконання наших зобов'язань.
+          </p>
+          <p>
+            Гарантії для нас, насамперед - це наша відкрита професійна позиція.
+          </p>
+          <p>Нижче наведено гарантійні терміни та терміни служби.</p>
+          <p>
+            Ця інформація дозволить Вам правильно оцінити запропоновані послуги.
+          </p>
+        </div>
+        <div class="row fw-bolder mt-3" data-aos="fade-up" data-aos-delay="300">
+          <div
+            class="col-sm-6 col-md-6 d-flex align-items-stretch justify-content-center"
+          >
+            Послуга
+          </div>
+          <div
+            class="col-sm-3 col-md-3 d-flex align-items-stretch justify-content-center"
+          >
+            Гарантія
+          </div>
+          <div
+            class="col-sm-3 col-md-3 d-flex align-items-stretch justify-content-center"
+          >
+            Термін служби
+          </div>
+        </div>
+        <div class="row mt-3 table-row" data-aos="fade-up" data-aos-delay="350">
+          <div
+            class="col-sm-6 col-md-6 d-flex align-items-stretch justify-content-start"
+          >
+            Реставрація із композитних матеріалів
+          </div>
+          <div
+            class="col-sm-3 col-md-3 d-flex align-items-stretch justify-content-center"
+          >
+            1 рік
+          </div>
+          <div
+            class="col-sm-3 col-md-3 d-flex align-items-stretch justify-content-center"
+          >
+            5 років
+          </div>
+        </div>
+        <div class="row mt-3 table-row" data-aos="fade-up" data-aos-delay="450">
+          <div
+            class="col-sm-6 col-md-6 d-flex align-items-stretch justify-content-start"
+          >
+            Керамічні реставрації (вкладки, накладки)
+          </div>
+          <div
+            class="col-sm-3 col-md-3 d-flex align-items-stretch justify-content-center"
+          >
+            3 років
+          </div>
+          <div
+            class="col-sm-3 col-md-3 d-flex align-items-stretch justify-content-center"
+          >
+            15 років
+          </div>
+        </div>
+        <div class="row mt-3 table-row" data-aos="fade-up" data-aos-delay="500">
+          <div
+            class="col-sm-6 col-md-6 d-flex align-items-stretch justify-content-start"
+          >
+            Класичні металокерамічні коронки
+          </div>
+          <div
+            class="col-sm-3 col-md-3 d-flex align-items-stretch justify-content-center"
+          >
+            1 рік
+          </div>
+          <div
+            class="col-sm-3 col-md-3 d-flex align-items-stretch justify-content-center"
+          >
+            7 років
+          </div>
+        </div>
+        <div class="row mt-3 table-row" data-aos="fade-up" data-aos-delay="550">
+          <div
+            class="col-sm-6 col-md-6 d-flex align-items-stretch justify-content-start"
+          >
+            Високоестетичні керамічні коронки
+          </div>
+          <div
+            class="col-sm-3 col-md-3 d-flex align-items-stretch justify-content-center"
+          >
+            3 років
+          </div>
+          <div
+            class="col-sm-3 col-md-3 d-flex align-items-stretch justify-content-center"
+          >
+            15 років
+          </div>
+        </div>
+        <div class="row mt-3 table-row" data-aos="fade-up" data-aos-delay="600">
+          <div
+            class="col-sm-6 col-md-6 d-flex align-items-stretch justify-content-start"
+          >
+            Коронки (постійні) на імплантатах
+          </div>
+          <div
+            class="col-sm-3 col-md-3 d-flex align-items-stretch justify-content-center"
+          >
+            3 роки
+          </div>
+          <div
+            class="col-sm-3 col-md-3 d-flex align-items-stretch justify-content-center"
+          >
+            15 років
+          </div>
+        </div>
+        <div class="row mt-3 table-row" data-aos="fade-up" data-aos-delay="650">
+          <div
+            class="col-sm-6 col-md-6 d-flex align-items-stretch justify-content-start"
+          >
+            Коронки пластмасові тимчасові
+          </div>
+          <div
+            class="col-sm-3 col-md-3 d-flex align-items-stretch justify-content-center"
+          >
+            -
+          </div>
+          <div
+            class="col-sm-3 col-md-3 d-flex align-items-stretch justify-content-center"
+          >
+            1 місяць
+          </div>
+        </div>
+        <div class="row mt-3 table-row" data-aos="fade-up" data-aos-delay="700">
+          <div
+            class="col-sm-6 col-md-6 d-flex align-items-stretch justify-content-start"
+          >
+            Імплантат дентальний (стоматологічний)
+          </div>
+          <div
+            class="col-sm-3 col-md-3 d-flex align-items-stretch justify-content-center"
+          >
+            3 роки
+          </div>
+          <div
+            class="col-sm-3 col-md-3 d-flex align-items-stretch justify-content-center"
+          >
+            на протязі всього життя
+          </div>
+        </div>
+        <div class="mt-5" data-aos="fade-up" data-aos-delay="800">
+          <p>
+            У питаннях особистого здоров'я та краси важлива довіра та
+            впевненість у результаті. І вибір клініки часто робиться,
+            ґрунтуючись на думці людей, яким довіряєш. Ми це знаємо, адже багато
+            нових пацієнтів приходять до нас саме за рекомендаціями своїх
+            друзів, колег та партнерів.
+          </p>
+          <p>
+            Необхідно сказати, що «Гарантія» та «Термін служби» – це різні
+            поняття. Але в медицині їх часто використовують із рекламною метою
+            без уточнення, про що йдеться мова.
+          </p>
+          <p>
+            Гарантія — це зобов'язання перед Пацієнтом, що зафіксована в
+            порожнині рота дентальна конструкція (реставрації зуба, коронки,
+            імпланти чи вініри) виконуватимуть свої прямі функції, зберігатимуть
+            свою цілісність і міцність. В іншому випадку, будуть перероблені
+            повністю за рахунок клініки
+          </p>
+          <p>
+            Термін служби - це період часу у світовій стоматологічній практиці,
+            протягом якого, при правильному обігу, дентальні конструкції
+            продовжать виконувати свої функції, зберігаючи міцність, цілісність
+            та задані естетичні параметри.
+          </p>
+          <p>
+            У медицині часто маніпулюють поняттями гарантій, особливо щодо
+            лікування та/або лікування. Проте, гарантії лікування у західній
+            медичній практиці немає. Цивілізовані клініки та лікарі
+            використовують чіткі поняття «прогнозу», «очікуваного результату» та
+            «статистики успішних втручань та операцій».
+          </p>
+          <p>
+            Який з варіантів: художня реставрація, коронка або імплантанти
+            підійде саме Вам зможе порадити лікар.
+          </p>
+          <p>
+            Вивчивши на консультації Вашу ситуацію, особливості організму і
+            стиль життя, ми підбираємо найкраще рішення. Тому ми приділяємо
+            особливу увагу Першій зустрічі та Першому етапу!
+          </p>
+          <p>Ми із задоволенням відповімо на всі Ваші питання.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="cta" class="cta bg-gray">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8" data-aos="fade-up">
+          <div class="section-title" data-aos="fade-up" data-aos-delay="300">
+            <h2>Записатися на прийом</h2>
+          </div>
+          <div class="cta-form">
+            <FormSection classNames="contact-form" />
+          </div>
+        </div>
+        <div
+          class="col-md-2 docphoto"
+          data-aos="fade-left"
+          data-aos-delay="300"
+        >
+          <img lazyload src="/assets/img/dr_kravchenko_dentist.png" alt="" />
+        </div>
+        <div
+          class="col-md-2 docphoto doc2photo"
+          data-aos="fade-left"
+          data-aos-delay="500"
+        >
+          <img lazyload src="/assets/img/doctor-2.png" alt="" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Testimonials Section ======= -->
+  <section id="testimonials" class="testimonials">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Відгуки</h2>
+      </div>
+
+      <div
+        class="testimonials-slider swiper"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="testimonial-wrap">
+              <div class="testimonial-item">
+                <figure>
+                  <a
+                    href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDIwNDQzNTI4MjA1NzY3?story_media_id=2665550383294795165&utm_medium=copy_link"
+                    target="_blank"
+                    ><img
+                      lazyload
+                      src="/assets/img/testimonials/dr-kravchenko-otzyv-1.jpg"
+                      alt=""
+                    /></a
+                  >
+                </figure>
+              </div>
+            </div>
+          </div><!-- End testimonial item -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-wrap">
+              <div class="testimonial-item">
+                <figure>
+                  <a
+                    href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDIwNDQzNTI4MjA1NzY3?story_media_id=2665550383294795165&utm_medium=copy_link"
+                    target="_blank"
+                    ><img
+                      lazyload
+                      src="/assets/img/testimonials/dr-kravchenko-otzyv-2.jpg"
+                      alt=""
+                    /></a
+                  >
+                </figure>
+              </div>
+            </div>
+          </div><!-- End testimonial item -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-wrap">
+              <div class="testimonial-item">
+                <figure>
+                  <a
+                    href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDIwNDQzNTI4MjA1NzY3?story_media_id=2665550383294795165&utm_medium=copy_link"
+                    target="_blank"
+                    ><img
+                      lazyload
+                      src="/assets/img/testimonials/dr-kravchenko-otzyv-3.jpg"
+                      alt=""
+                    /></a
+                  >
+                </figure>
+              </div>
+            </div>
+          </div><!-- End testimonial item -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-wrap">
+              <div class="testimonial-item">
+                <figure>
+                  <a
+                    href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDIwNDQzNTI4MjA1NzY3?story_media_id=2665550383294795165&utm_medium=copy_link"
+                    target="_blank"
+                    ><img
+                      lazyload
+                      src="/assets/img/testimonials/dr-kravchenko-otzyv-5.jpg"
+                      alt=""
+                    /></a
+                  >
+                </figure>
+              </div>
+            </div>
+          </div><!-- End testimonial item -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-wrap">
+              <div class="testimonial-item">
+                <figure>
+                  <a
+                    href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDIwNDQzNTI4MjA1NzY3?story_media_id=2665550383294795165&utm_medium=copy_link"
+                    target="_blank"
+                    ><img
+                      lazyload
+                      src="/assets/img/testimonials/dr-kravchenko-otzyv-6.jpg"
+                      alt=""
+                    /></a
+                  >
+                </figure>
+              </div>
+            </div>
+          </div><!-- End testimonial item -->
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <div class="row text-center" data-aos="fade-up" data-aos-delay="300">
+        <a
+          href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDIwNDQzNTI4MjA1NzY3?story_media_id=2665550383294795165&utm_medium=copy_link"
+          target="_blank"
+          class="igreviews"
+          ><i class="bi bi-instagram"></i> Дивитися відгуки у Instagram</a
+        >
+      </div>
+    </div>
+  </section><!-- End Testimonials Section -->
+
+  <Portfolio />
+
+  <!-- ======= Contact Section ======= -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Контакти</h2>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="contact-about">
+            <h3>Dental Magic Studio</h3>
+            <p>Здорові зуби - гарна посмішка</p>
+            <SocialLinks />
+          </div>
+        </div>
+
+        <div
+          class="col-lg-4 col-md-6 mt-4 mt-md-0"
+          data-aos="fade-up"
+          data-aos-delay="200"
+        >
+          <div class="info">
+            <div>
+              <div class="location"></div>
+              <a href={GOOGLE_MAPS_LINK} target="_blank">{ADDRESS}</a>
+            </div>
+
+            <div>
+              <div class="telephone"></div>
+              <a href=`tel:${PHONE_NUMBER}`>{PHONE_NUMBER_MASK}</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-12" data-aos="fade-up" data-aos-delay="300">
+          <FormSection classNames="contact-form" />
+        </div>
+      </div>
+    </div>
+  </section><!-- End Contact Section -->
+</main><!-- End #main -->
+
+<!-- ======= Footer ======= -->
+<footer id="footer" class="bg-gray">
+  <div class="container">
+    <div class="row d-flex align-items-center">
+      <div class="col-lg-6 text-lg-left text-center">
+        <div class="copyright">&copy; Copyright 2021. Всі права захищені</div>
+        <div class="credits"></div>
+      </div>
+      <div class="col-lg-6"></div>
+    </div>
+  </div>
+</footer><!-- End Footer -->
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center"
+  ><i class="bi bi-arrow-up-short"></i></a
+>
+</BaseLayout>
