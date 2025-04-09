@@ -5,7 +5,11 @@ type Props = {
   classNames?: string;
 };
 
-const { subject = "Запис на прийом", contained = false, classNames = "" } = Astro.props;
+const {
+  subject = "Запис на прийом",
+  contained = false,
+  classNames = "",
+} = Astro.props;
 ---
 
 <div id="frmContact" class={classNames}>
@@ -16,6 +20,7 @@ const { subject = "Запис на прийом", contained = false, classNames 
     <input
       type="text"
       name="userName"
+      data-user-name
       id="userName"
       class="demoInputBox"
       placeholder="Дмитро Іванов"
@@ -27,6 +32,7 @@ const { subject = "Запис на прийом", contained = false, classNames 
     <input
       type="tel"
       name="userTel"
+      data-user-tel
       id="userTel"
       class="phone demoInputBox"
       placeholder="+38 (000) 000-00-00"
@@ -36,7 +42,7 @@ const { subject = "Запис на прийом", contained = false, classNames 
   <div class={contained ? "contained" : ""}>
     <div>
       <input type="hidden" id="category" name="subject" value={subject} />
-      <button name="submit" class="btnAction" onclick="sendContact();">
+      <button data-action="sendEmail" name="submit" class="btnAction">
         Записатися
       </button>
     </div>
@@ -111,3 +117,159 @@ const { subject = "Запис на прийом", contained = false, classNames 
     }
   }
 </style>
+
+<script>
+  type Form = {
+    userName: HTMLInputElement;
+    userTel: HTMLInputElement;
+    subject: HTMLInputElement;
+  };
+
+  function validateForm({ userName, userTel, subject }: Form) {
+    const form = document.querySelector("#frmContact") as HTMLFormElement;
+    let valid = true;
+
+    form.querySelectorAll(".demoInputBox").forEach((input) => {
+      if (input instanceof HTMLElement) {
+        input.style.backgroundColor = "";
+      }
+    });
+
+    form.querySelectorAll(".info").forEach((info) => {
+      if (info instanceof HTMLElement) {
+        info.innerHTML = "";
+      }
+    });
+
+    if (!userName.value) {
+      const userNameInfo = form.querySelector("#userName-info");
+
+      if (userNameInfo) {
+        userNameInfo.innerHTML = "(обязательно)";
+      }
+
+      userName.style.borderColor = "#F42C04";
+      valid = false;
+    }
+
+    if (!userTel.value) {
+      const userTelInfo = form.querySelector("#userTel-info");
+
+      if (userTelInfo) {
+        userTelInfo.innerHTML = "(обязательно)";
+      }
+
+      userTel.style.borderColor = "#F42C04";
+      valid = false;
+    }
+
+    return valid;
+  }
+
+  function sendEmail(event: Event) {
+    const form = (event.target as HTMLElement).closest("#frmContact");
+
+    if (!form) {
+      console.error("Форма не найдена");
+      return;
+    }
+
+    const userName = form.querySelector("[data-user-name]") as HTMLInputElement;
+    const userTel = form.querySelector("[data-user-tel]") as HTMLInputElement;
+    const subject = form.querySelector("[name='subject']") as HTMLInputElement;
+
+    const valid = validateForm({ userName, userTel, subject });
+
+    if (!valid) {
+      return;
+    }
+
+    const ENDPOINT = "https://form.dentalmagicstudio.com";
+
+    const btnAction = form.querySelector(".btnAction");
+
+    if (btnAction) {
+      btnAction.setAttribute("disabled", "true");
+    }
+
+    fetch(ENDPOINT, {
+      method: "POST",
+      body: JSON.stringify({
+        userName: userName.value,
+        userTel: userTel.value,
+        subject: subject.value,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        const mailStatus = form.querySelector("#mail-status");
+
+        if (mailStatus) {
+          mailStatus.innerHTML = `<p class='success'>${data.message}</p>`;
+        }
+
+        userName.value = "";
+        userTel.value = "";
+        subject.value = "";
+
+        form.querySelectorAll(".demoInputBox").forEach((input) => {
+          if (input instanceof HTMLElement) {
+            input.style.borderColor = "";
+          }
+        });
+
+        form.querySelectorAll(".info").forEach((info) => {
+          if (info) {
+            info.innerHTML = "";
+          }
+        });
+
+        setTimeout(() => {
+          window.location.href = "/dyakuyu-za-zapys";
+        }, 300);
+      })
+      .catch((error) => {
+        const mailStatus = form.querySelector("#mail-status");
+        if (mailStatus) {
+          if (error.statusMessage) {
+            mailStatus.innerHTML = `<p class='error'>${error.statusMessage}</p>`;
+          } else {
+            console.error("Error:", error);
+          }
+        }
+      })
+      .finally(() => {
+        if (btnAction) {
+          btnAction.removeAttribute("disabled");
+        }
+      });
+  }
+
+  const buttons = document.querySelectorAll("[data-action='sendEmail']");
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", sendEmail);
+  });
+</script>
+
+<script is:inline>
+  $(document).ready(function () {
+    $.fn.setCursorPosition = function (pos) {
+      if ($(this).get(0).setSelectionRange) {
+        $(this).get(0).setSelectionRange(pos, pos);
+      } else if ($(this).get(0).createTextRange) {
+        var range = $(this).get(0).createTextRange();
+        range.collapse(true);
+        range.moveEnd("character", pos);
+        range.moveStart("character", pos);
+        range.select();
+      }
+    };
+
+    $(".phone")
+      .click(function () {
+        $(this).setCursorPosition(6);
+      })
+      .mask("+38 (099) 999-99-99");
+  });
+</script>
