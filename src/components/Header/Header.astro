@@ -95,6 +95,38 @@ import Popup from "../Popup/Popup.astro";
 
 <Popup />
 
+<script>
+  /**
+   * Mobile nav toggle
+   */
+  document.addEventListener('DOMContentLoaded', () => {
+    const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+    const navbarMobile = document.querySelector('#navbar-mobile');
+
+    mobileNavToggle?.addEventListener('click', function(this: HTMLElement) {
+      console.log("click");
+      navbarMobile?.classList.toggle("navbar-mobile");
+      navbarMobile?.classList.toggle("navbar-mobile-open");
+      this.classList.toggle("bi-list");
+      this.classList.toggle("bi-x");
+    });
+
+    /**
+     * Mobile nav dropdowns activate
+     */
+    const dropdownLinks = document.querySelectorAll('.navbar .dropdown > a');
+    
+    dropdownLinks.forEach(link => {
+      link.addEventListener('click', function(this: HTMLElement, e: Event) {
+        if (navbarMobile?.classList.contains("navbar-mobile")) {
+          e.preventDefault();
+          this.nextElementSibling?.classList.toggle("dropdown-active");
+        }
+      });
+    });
+  });
+</script>
+
 <style>
   #header .logo-img {
     width: 204px;
